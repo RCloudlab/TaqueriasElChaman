@@ -1,0 +1,9 @@
+function App() {
+  return (
+    <div>
+      <span className='justify-normal '>Home</span>
+    </div>
+  )
+}
+
+export default App
