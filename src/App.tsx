@@ -1,8 +1,13 @@
+import './index.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 function App() {
   return (
-    <div>
-      <span className='justify-normal '>Estas en develop hola</span>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
