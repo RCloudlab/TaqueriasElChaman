@@ -1,4 +1,4 @@
-// tailwind.config.js
+const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,17 +8,19 @@ module.exports = {
    theme: {
     extend: {
       colors: {
-        'aztec-gold': '#D4A373',
-        'aztec-red': '#C0392B',
-        'aztec-brown': '#8D6E63',
-        'dark-obsidian': '#2C3E50',
+        gray:{
+          900: '#1A1A1A',
+          800: '#111111',
+          850: '#8F9495',
+          700: '#D9D9D9', //Es mucho mas claro
+        },
+        red:{
+          900: '#C00F0C',
+        }
       },
       fontFamily: {
-        aztec: ['"Nombre de tu fuente azteca"', 'serif'],
-      },
-      backgroundImage: {
-        'aztec-pattern': "url('./src/assets/images/aztec_pattern.jpg')",
-      },
+        'sans': ['Jost', ...defaultTheme.fontFamily.sans]
+      }
     },
   },
   plugins: [],
