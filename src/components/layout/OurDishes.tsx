@@ -7,17 +7,17 @@ function OurDishes() {
     {
       title: 'Quesadillas',
       imageUrl: IMAGES.insta,
-      route: '/menu/quesadillas' // <-- Define la ruta aquí
+      route: '/menu/quesadillas'
     },
     {
       title: 'Tacos',
       imageUrl: IMAGES.insta,
-      route: '/menu/tacos' // <-- Define la ruta aquí
+      route: '/menu/tacos'
     },
     {
       title: 'Burritos',
       imageUrl: IMAGES.insta,
-      route: '/menu/burritos' // <-- Define la ruta aquí
+      route: '/menu/burritos'
     },
   ];
 
