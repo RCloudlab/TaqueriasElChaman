@@ -78,7 +78,7 @@ function Footer() {
                 <FaFacebookF />
               </a>
               <a
-                href="https://www.instagram.com/taqueriaelchaman/"
+                href="https://www.instagram.com/taqueriaselchaman/"
                 aria-label="Instagram"
                 className="bg-white text-black  w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
               >
@@ -166,28 +166,28 @@ function Footer() {
             <hr className="border-[#3A3940] mb-4" />
             <div className="grid grid-cols-3 gap-2">
               {/* Estas se podran mapear una vez se consuma la API */}
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 1"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 2"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 3"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 4"
