@@ -43,7 +43,7 @@ function NavBar() {
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled ? "bg-black backdrop-blur-md shadow-md" : "bg-transparent"
       } text-white px-8 py-1 lg:px-12`}
     >
       <div className="container mx-auto flex flex-col sm:flex-row justify-between text-center sm:text-left">
