@@ -135,9 +135,9 @@ export const NavBarV2 = () => {
         isScrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent"
       } text-white px-8 py-2 lg:px-12`}
     >
-      <div className="container mx-auto relative">
+      <div className="container mx-auto relative py-2">
         {/**Information Section */}
-        <div className="flex justify-between text-xs">
+        <div className="gird grid-cols-2 lg:flex justify-between text-xs pb-2">
           {/**schedules */}
           <div className="flex space-x-5">
             {schedules.map((schedule: ContactInformation) => (
@@ -157,17 +157,21 @@ export const NavBarV2 = () => {
         <hr className="border-[#3A3940] my-2 container mx-auto" />
 
         {/**Nav section */}
-        <div className="flex justify-between -my-2 items-center">
+        <div className="flex justify-between -my-2 items-center pt-2">
           {/**Logo, name */}
           <div className="flex space-x-2 text-4xl items-center">
-            <img
+            <a href="#">
+              <img
               src={IMAGES.deerLogo}
               alt="Logo Taqueria Chaman"
-              className="h-16 object-contain "
+              className="lg:h-28 object-contain -my-3 h-16"
             />
-            <h2 className="max-xl:text-2xl max-lg:text-lg">
-              Taquerías El Chaman{" "}
-            </h2>
+            </a>            
+            <a href="#">
+              <h1 className="max-xl:text-2xl max-md:text-lg">
+              Taquerías El Chaman
+            </h1>
+            </a>            
           </div>
 
           {/**NAV */}
@@ -178,7 +182,7 @@ export const NavBarV2 = () => {
           </div>
           {/**Address Button */}
           <div>
-            <button className="bg-red-900 py-1 px-4 rounded-lg">
+            <button className="bg-red-900 py-1 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400">
               <a
                 href={googleUrl}
                 onClick={openMaps}
@@ -193,7 +197,7 @@ export const NavBarV2 = () => {
           </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="hidden max-lg:flex px-4 text-2xl text-red-900"
+            className="hidden ml-20 max-lg:flex px-4 text-4xl text-red-900 hover:text-red-900/80 transition-all duration-400"
           >
             {" "}
             <GiHamburgerMenu />
@@ -205,7 +209,7 @@ export const NavBarV2 = () => {
           <div
             className={`${
               isOpen ? "block" : "hidden"
-            } block lg:hidden bg-black/50 text-gray-750 space-x-6 absolute right-6 top-20 rounded-2x`}
+            } block lg:hidden bg-black/50 text-gray-750 space-x-6 absolute right-12 top-28 rounded-2x`}
           >
             {optionsNav.map((option: OptionsNav) => (
               <ItemsNav key={option.id} {...option} />
