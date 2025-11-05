@@ -3,8 +3,11 @@ import { ItemsContact } from "./ItemsContact";
 import { ItemsNav } from "./ItemsNav";
 import { IMAGES } from "../../../constants/images";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { schedules,contactInformation,optionsNav } from "../../../constants/navbarConstant";
+import type { ContactInformation, OptionsNav } from "./props";
 
 export const NavBarV2 = () => {
+
   /**CAMBIAR FONDO AL SCROLEAR */
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
@@ -16,85 +19,7 @@ export const NavBarV2 = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  {
-    /************************************************************************** */
-  }
-
-  {
-    /**ARREGLO GENERADOR DE LA INFORMACION: Horarios, telefono y dirección */
-  }
-  interface ContactInformation {
-    id: string;
-    info: string;
-  }
-
-  const schedules: ContactInformation[] = [
-    {
-      id: "1",
-      info: "6:30pm - 11:30pm",
-    },
-
-    {
-      id: "2",
-      info: "Lun-Vier: 6:30pm - 11:30pm",
-    },
-  ];
-
-  const contactInformation: ContactInformation[] = [
-    {
-      id: "1",
-      info: "+52 443 141 3199",
-    },
-
-    {
-      id: "2",
-      info: "Tejedores de Aranza 512, Vasco de Quiroga, Morelia",
-    },
-  ];
-
-  {
-    /******************************************************************* */
-  }
-
-  {
-    /**ARREGLO GENERADOR OPCIONES NAV */
-  }
-  interface OptionsNav {
-    id: string;
-    ref: string;
-    text: string;
-  }
-
-  const optionsNav: OptionsNav[] = [
-    {
-      id: "1",
-      ref: "#",
-      text: "Home",
-    },
-    {
-      id: "1",
-      ref: "#",
-      text: "Menú",
-    },
-    {
-      id: "1",
-      ref: "#",
-      text: "Nuestra Historia",
-    },
-    {
-      id: "1",
-      ref: "#",
-      text: "Ubicacion",
-    },
-    {
-      id: "1",
-      ref: "#",
-      text: "Contacto",
-    },
-  ];
-  {
-    /*********************************************************** */
-  }
+  
 
   {
     /**Boton dirección */
@@ -137,7 +62,7 @@ export const NavBarV2 = () => {
     >
       <div className="container mx-auto relative py-2">
         {/**Information Section */}
-        <div className="gird grid-cols-2 lg:flex justify-between text-xs pb-2">
+        <div className="gird grid-rows-2 lg:flex justify-between text-xs pb-2">
           {/**schedules */}
           <div className="flex space-x-5">
             {schedules.map((schedule: ContactInformation) => (
@@ -209,7 +134,7 @@ export const NavBarV2 = () => {
           <div
             className={`${
               isOpen ? "block" : "hidden"
-            } block lg:hidden bg-black/50 text-gray-750 space-x-6 absolute right-12 top-28 rounded-2x`}
+            } block lg:hidden bg-black/50 text-gray-750 space-x-6 absolute -right-3 top-28 rounded-md`}
           >
             {optionsNav.map((option: OptionsNav) => (
               <ItemsNav key={option.id} {...option} />
