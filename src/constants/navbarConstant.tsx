@@ -17,12 +17,12 @@ export const schedules: ContactInformation[] = [
 
 export const contactInformation: ContactInformation[] = [
   {
-    id: "1",
+    id: "3",
     info: "+52 443 141 3199",
   },
 
   {
-    id: "2",
+    id: "4",
     info: "Tejedores de Aranza 512, Vasco de Quiroga, Morelia",
   },
 ];
@@ -32,27 +32,27 @@ export const contactInformation: ContactInformation[] = [
 }
 export const optionsNav: OptionsNav[] = [
   {
-    id: "1",
+    id: "5",
     ref: "#",
     text: "Home",
   },
   {
-    id: "1",
+    id: "6",
     ref: "#",
     text: "Menú",
   },
   {
-    id: "1",
+    id: "7",
     ref: "#",
     text: "Nuestra Historia",
   },
   {
-    id: "1",
+    id: "8",
     ref: "#",
     text: "Ubicacion",
   },
   {
-    id: "1",
+    id: "9",
     ref: "#",
     text: "Contacto",
   },

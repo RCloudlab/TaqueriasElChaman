@@ -2,7 +2,6 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/layout/Footer";
-import NavBar from "./components/layout/NavBar";
 import { NavBarV2 } from "./components/layout/NavBar/NavBarV2";
 
 function App() {
