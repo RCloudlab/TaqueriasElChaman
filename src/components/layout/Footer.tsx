@@ -57,8 +57,8 @@ function Footer() {
             >
               {address}
             </a>
-            <br className=""/>
-            <hr className="border-transparent mt-2"/>
+            <br className="" />
+            <hr className="border-transparent mt-2" />
             <a
               href="tel:+524431413799"
               className="text-sm mb-4 underline"
@@ -66,7 +66,7 @@ function Footer() {
             >
               +52 443 141 3799
             </a>
-            <hr className="border-transparent mt-2"/>
+            <hr className="border-transparent mt-2" />
             <p className="text-sm mb-4">taqueriasaelchaman@gmail.com</p>
 
             <div className="flex justify-center sm:justify-start space-x-3">
