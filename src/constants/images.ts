@@ -4,6 +4,7 @@ import tacosHome from "../assets/images/home-image.avif";
 import tacosHomejpg from "../assets/images/home-image.jpg";
 import tacosHomeweb from "../assets/images/home-image.webp";
 import tacosHomeMobile from "../assets/images/home-image-mobile.png";
+import buttonMenu from "../assets/Images/b-menu.gif"
 
 export const IMAGES = {
   deerLogo,
@@ -12,6 +13,7 @@ export const IMAGES = {
   tacosHomejpg,
   tacosHomeweb,
   tacosHomeMobile,
+  buttonMenu,
 };
 
 export const ICONS = {
