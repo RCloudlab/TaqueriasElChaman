@@ -1,6 +1,7 @@
 import { IMAGES } from "../../constants/images";
 import Diamods from "../ui/Diamods";
 import DishesCard from "../ui/DishesCard";
+import Marquee from "react-fast-marquee";
 
 function OurDishes() {
   const menuItems = [
@@ -19,10 +20,20 @@ function OurDishes() {
       imageUrl: IMAGES.insta,
       route: '/menu/burritos'
     },
+    {
+      title: 'Postres',
+      imageUrl: IMAGES.insta,
+      route: '/menu/postres'
+    },
+    {
+      title: 'Bebidas',
+      imageUrl: IMAGES.insta,
+      route: '/menu/bebidas'
+    },
   ];
 
   return (
-    <section className="w-full bg-gray-900 py-20">
+    <section className="w-full bg-gray-900 py-20 overflow-hidden"> 
       <div className="container mx-auto px-4">
         <header className="text-center">
           <div className="flex justify-center items-center gap-4 md:gap-6">
@@ -34,17 +45,29 @@ function OurDishes() {
           </div>
           <div className="w-px h-10 bg-red-600 mx-auto mt-8 mb-4 md:mb-5"></div>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      </div>
+
+      <div className="">
+        <Marquee
+          speed={80} 
+          pauseOnHover={true}
+          className="overflow-hidden py-6"
+          autoFill={true}
+        >
           {menuItems.map((item) => (
-            <DishesCard
-              route="/#"
-              key={item.title}
-              title={item.title}
-              imageUrl={item.imageUrl}
-              logoUrl={IMAGES.deerLogo}
-            />
+            <div 
+              key={item.title} 
+              className="w-[300px] md:w-[400px] mx-4 lg:mx-8"
+            >
+              <DishesCard
+                route="/#"
+                title={item.title}
+                imageUrl={item.imageUrl}
+                logoUrl={IMAGES.deerLogo}
+              />
+            </div>
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   );
