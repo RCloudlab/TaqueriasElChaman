@@ -2,15 +2,16 @@ interface Props {
   id: string;
   ref: string;
   text: string;
+  styles?: string;
 }
 
-export const ItemsNav = ({ id, ref, text }: Props) => {
+export const ItemsNav = ({ id, ref, text, styles='' }: Props) => {
   return (
     <div>
       <a
         id={id}
         href={ref}
-        className=" text-base uppercase border border-transparent border-b-2 hover:border-b-red-900 max-xl:text-xs transition-all duration-300"
+        className={` ${styles} text-xs uppercase border border-transparent border-b-2 hover:border-b-red-900 max-xl:text-xs transition-all duration-300`} 
       >
         {text}
       </a>
