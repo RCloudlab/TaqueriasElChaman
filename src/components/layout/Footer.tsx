@@ -57,8 +57,8 @@ function Footer() {
             >
               {address}
             </a>
-            <br className=""/>
-            <hr className="border-transparent mt-2"/>
+            <br className="" />
+            <hr className="border-transparent mt-2" />
             <a
               href="tel:+524431413799"
               className="text-sm mb-4 underline"
@@ -66,7 +66,7 @@ function Footer() {
             >
               +52 443 141 3799
             </a>
-            <hr className="border-transparent mt-2"/>
+            <hr className="border-transparent mt-2" />
             <p className="text-sm mb-4">taqueriasaelchaman@gmail.com</p>
 
             <div className="flex justify-center sm:justify-start space-x-3">
@@ -78,7 +78,7 @@ function Footer() {
                 <FaFacebookF />
               </a>
               <a
-                href="https://www.instagram.com/taqueriaelchaman/"
+                href="https://www.instagram.com/taqueriaselchaman/"
                 aria-label="Instagram"
                 className="bg-white text-black  w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
               >
@@ -166,28 +166,28 @@ function Footer() {
             <hr className="border-[#3A3940] mb-4" />
             <div className="grid grid-cols-3 gap-2">
               {/* Estas se podran mapear una vez se consuma la API */}
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 1"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 2"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 3"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaelchaman/">
+              <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
                   src={IMAGES.insta}
                   alt="Instagram 4"
