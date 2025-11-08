@@ -43,18 +43,18 @@ function NavBar() {
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-black backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled ? "bg-black/90 backdrop-blur-md shadow-md" : "bg-transparent"
       } text-white px-8 py-1 lg:px-12`}
     >
       <div className="container mx-auto flex flex-col sm:flex-row justify-between text-center sm:text-left">
-        <div className="flex items-center justify-center sm:justify-start gap-4 text-ml sm:text-[12px] flex-wrap sm:ml-1">
+        <div className=" max-sm:text-[0.7rem] flex items-center justify-center sm:justify-start gap-4 text-ml sm:text-[12px] flex-wrap sm:ml-1">
           <p>Lun-Sab: 6:30pm - 11:30pm</p>
           <FaSquare className="text-gray-400 rotate-45 size-1.5" />
           <p>Domingos: 12pm - 11:30pm</p>
         </div>
 
         <div className="hidden sm:flex items-center justify-end gap-4 text-sm py-2 flex-wrap sm:mr-1">
-          <div className="flex items-center gap-4">
+          <div className=" flex items-center gap-4">
             <p>taqueriaselchaman@gmail.com</p>
             <FaSquare className="text-gray-400 rotate-45 size-1.5" />
             <a
@@ -88,7 +88,7 @@ function NavBar() {
             alt="Logo Taquerías el Chaman"
             className="h-16 sm:h-20 object-contain"
           />
-          <h1 className="text-2xl sm:text-4xl font-light">
+          <h1 className="max-sm:text text-2xl sm:text-4xl font-light">
             Taquerías El Chaman
           </h1>
         </a>
