@@ -73,7 +73,7 @@ export const NavBarV2 = () => {
           </div>
 
           {/**Phone, Address */}
-          <div className="grid grid-rows-2 md:flex md:justify-between">
+          <div className="grid grid-rows-2 md:flex md:justify-between gap-5">
             {contactInformation.map((contact: ContactInformation) => (
               <ItemsContact
                 styles="justify-star pl-0 space-y-1"
@@ -95,7 +95,7 @@ export const NavBarV2 = () => {
               <img
                 src={IMAGES.deerLogo}
                 alt="Logo Taqueria Chaman"
-                className="lg:h-28 object-contain -my-3 h-16"
+                className="lg:h-20 object-contain -my-3 h-16"
               />
             </a>
             <a href="#">
