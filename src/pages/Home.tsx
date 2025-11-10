@@ -1,3 +1,4 @@
+import Menu from "../components/layout/Menu";
 import { IMAGES } from "../constants/images"
 
 import OurDishes from "../components/layout/OurDishes"
@@ -19,6 +20,9 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
+      
+      <Menu/>
+      
       <OurDishes />
     </div>
   );

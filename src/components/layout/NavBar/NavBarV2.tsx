@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { ItemsContact } from "./ItemsContact";
-import { ItemsNav } from "./ItemsNav";
+import { ItemsContact } from "../../ui/ItemsContact";
+import { ItemsNav } from "../../ui/ItemsNav";
 import { IMAGES } from "../../../constants/images";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
