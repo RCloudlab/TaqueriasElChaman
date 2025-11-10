@@ -1,5 +1,5 @@
-import { IMAGES } from "../constants/images"
-
+import { IMAGES } from "../constants/images";
+import OurServices from "../components/ui/OurServices";
 import OurDishes from "../components/layout/OurDishes"
 
 function Home() {
@@ -19,6 +19,7 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
+      <OurServices />
       <OurDishes />
     </div>
   );
