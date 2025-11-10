@@ -17,6 +17,7 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
+      <OurStory />
     </div>
   );
 }
