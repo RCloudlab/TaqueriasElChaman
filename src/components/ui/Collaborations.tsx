@@ -27,23 +27,27 @@ const collaborationsData = [
 
 function Collaborations() {
     return (
-        <section>
-            <div>
-                <button>Contactar</button>
-                <button>Ver todos los videos</button>
-            </div>
-            <div>
-                <h2>Últimas colaboraciones</h2>
+        <section className="relative w-full py-20 px-5 bg-white overflow-hidden">
+            <div className="relative z-20 max-w-6xl mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-4">
+                    <a href="#" className="bg-[#C00F0C] text-white px-12 py-2 rounded-md text-sm hover:bg-red-800 transition-colors">Contactar</a>
+                    <a href="#" className="border border-[#C00F0C] px-12 py-2 rounded-md text-sm hover:bg-[#C00F0C] hover:text-white transition-colors">Ver todos los videos</a>
+                </div>
                 <div>
-                    {collaborationsData.map((colab) => (
-                        <CollaborationsCard
-                            key={colab.id}
-                            titulo={colab.titulo}
-                            redSocial={colab.redSocial}
-                            vistas={colab.vistas}
-                            imagen={colab.imagen}
-                        />
-                    ))}
+                    <h2 className="text-4xl font-bold text-gray-900 uppercase pb-6">
+                            Últimas colaboraciones
+                        </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {collaborationsData.map((colab) => (
+                            <CollaborationsCard
+                                key={colab.id}
+                                titulo={colab.titulo}
+                                redSocial={colab.redSocial}
+                                vistas={colab.vistas}
+                                imagen={colab.imagen}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
