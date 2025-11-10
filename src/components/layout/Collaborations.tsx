@@ -1,4 +1,4 @@
-import CollaborationsCard from "./CollaborationsCard";
+import CollaborationsCard from "../ui/CollaborationsCard";
 import { IMAGES } from "../../constants/images";
 
 const collaborationsData = [
