@@ -9,6 +9,7 @@ import {
   optionsNav,
 } from "../../../constants/navbarConstant";
 import type { ContactInformation, OptionsNav } from "./props";
+import { IoClose } from "react-icons/io5";
 
 export const NavBarV2 = () => {
   /**CAMBIAR FONDO AL SCROLEAR */
@@ -73,7 +74,7 @@ export const NavBarV2 = () => {
           </div>
 
           {/**Phone, Address */}
-          <div className="grid grid-rows-2 md:flex md:justify-between">
+          <div className="grid grid-rows-2 md:gap-4 md:flex md:justify-between">
             {contactInformation.map((contact: ContactInformation) => (
               <ItemsContact
                 styles="justify-star pl-0 space-y-1"
@@ -90,16 +91,16 @@ export const NavBarV2 = () => {
         {/**Nav section */}
         <div className="flex justify-between -my-2 items-center md:pt-2">
           {/**Logo, name */}
-          <div className="hidden md:flex space-x-2 text-4xl items-center">
+          <div className="flex space-x-2 items-center">
             <a href="#">
               <img
                 src={IMAGES.deerLogo}
                 alt="Logo Taqueria Chaman"
-                className="lg:h-28 object-contain -my-3 h-16"
+                className="h-10  lg:h-16 object-contain -my-3"
               />
             </a>
             <a href="#">
-              <h1 className="max-xl:text-2xl max-md:text-lg">
+              <h1 className="md:text-2xl text-sm">
                 Taquerías El Chaman
               </h1>
             </a>
@@ -113,7 +114,7 @@ export const NavBarV2 = () => {
           </div>
           {/**Address Button */}
           <div>
-            <button className="bg-red-900 py-1 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400">
+            <button className="hidden md:block bg-red-900 py-1 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400">
               <a
                 href={googleUrl}
                 onClick={openMaps}
@@ -127,40 +128,26 @@ export const NavBarV2 = () => {
             </button>
           </div>
 
-          <button
+         <button
             onClick={() => setIsOpen(!isOpen)}
-            className="hidden ml-20 max-lg:flex md:px-4 text-4xl text-red-900 hover:text-red-900/80 transition-all duration-400"
-          >
-            {" "}
-            <GiHamburgerMenu />
+            className="hidden ml-20 max-lg:flex md:px-4 text-3xl md:text-4xl text-red-900 hover:text-red-900/80 transition-all duration-400 mt-"
+          > 
+            {isOpen ? <IoClose />: <GiHamburgerMenu />}            
           </button>
-        </div>
-
-        {/**Buttons mobile */}
-        <div className="fex text-center">
+        </div>        
+      </div>
+      {/**Buttons mobile */}
+        <div className={`fex text-center mt-2 ${isOpen ? "-mb-[128px]": "mb-0"}`}>
           <div
             className={`${
               isOpen ? "block" : "hidden"
-            } block lg:hidden bg-black/50 text-gray-750 space-x-6 absolute -right-3 top-28 rounded-md`}
+            } block lg:hidden w-[100vw] bg-gray-600/80 text-gray-750 rounded-b-md text-md -ml-8`}
           >
             {optionsNav.map((option: OptionsNav) => (
-              <ItemsNav key={option.id} {...option} />
+              <ItemsNav styles="" key={option.id} {...option} />
             ))}
           </div>
         </div>
-      </div>
-      <div className="flex md:hidden space-x-4 text-4xl items-center">
-        <a href="#">
-          <img
-            src={IMAGES.deerLogo}
-            alt="Logo Taqueria Chaman"
-            className="lg:h-28 object-contain h-12 mt-2"
-          />
-        </a>
-        <a href="#">
-          <h1 className="text-3xl">Taquerías El Chaman</h1>
-        </a>
-      </div>
-    </nav>
+    </nav>    
   );
 };
