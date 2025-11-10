@@ -1,4 +1,5 @@
 import { IMAGES } from "../constants/images"
+import Collaborations from "../components/ui/Collaborations"
 
 import OurDishes from "../components/layout/OurDishes"
 
@@ -19,6 +20,7 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
+      <Collaborations />
       <OurDishes />
     </div>
   );
