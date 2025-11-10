@@ -6,6 +6,8 @@ import tacosHomeweb from "../assets/images/home-image.webp";
 import tacosHomeMobile from "../assets/images/home-image-mobile.png";
 import buttonMenu from "../assets/Images/b-menu.gif"
 
+import diamod from "../assets/icons/diamod.svg";
+
 export const IMAGES = {
   deerLogo,
   insta,
@@ -17,5 +19,5 @@ export const IMAGES = {
 };
 
 export const ICONS = {
-
+  diamod,
 };

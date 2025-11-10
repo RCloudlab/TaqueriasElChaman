@@ -1,5 +1,7 @@
 import { IMAGES } from "../constants/images"
 
+import OurDishes from "../components/layout/OurDishes"
+
 function Home() {
   return (
     <div className=" flex-1 w-full mx-auto">
@@ -17,6 +19,7 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
+      <OurDishes />
     </div>
   );
 }
