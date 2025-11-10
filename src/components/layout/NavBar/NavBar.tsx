@@ -8,7 +8,7 @@ import {
   contactInformation,
   optionsNav,
 } from "../../../constants/navbarConstant";
-import type { ContactInformation, OptionsNav } from "./props";
+import type { ContactInformation, OptionsNav } from "../../../utils/props";
 import { IoClose } from "react-icons/io5";
 
 export const NavBarV2 = () => {
