@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { IMAGES } from "../../constants/images";
 import { HiOutlineArrowRight } from "react-icons/hi";

@@ -1,4 +1,5 @@
 import { IMAGES } from "../../constants/images";
+import { useIsMobile } from "../../hooks/isMobile";
 import Diamods from "../ui/Diamods";
 import DishesCard from "../ui/DishesCard";
 import Marquee from "react-fast-marquee";
@@ -6,34 +7,36 @@ import Marquee from "react-fast-marquee";
 function OurDishes() {
   const menuItems = [
     {
-      title: 'Quesadillas',
+      title: "Quesadillas",
       imageUrl: IMAGES.insta,
-      route: '/menu/quesadillas'
+      route: "/menu/quesadillas",
     },
     {
-      title: 'Tacos',
+      title: "Tacos",
       imageUrl: IMAGES.insta,
-      route: '/menu/tacos'
+      route: "/menu/tacos",
     },
     {
-      title: 'Burritos',
+      title: "Burritos",
       imageUrl: IMAGES.insta,
-      route: '/menu/burritos'
+      route: "/menu/burritos",
     },
     {
-      title: 'Postres',
+      title: "Postres",
       imageUrl: IMAGES.insta,
-      route: '/menu/postres'
+      route: "/menu/postres",
     },
     {
-      title: 'Bebidas',
+      title: "Bebidas",
       imageUrl: IMAGES.insta,
-      route: '/menu/bebidas'
+      route: "/menu/bebidas",
     },
   ];
 
+  const isMobile = useIsMobile(768);
+
   return (
-    <section className="w-full bg-gray-900 py-20 overflow-hidden"> 
+    <section className="w-full bg-gray-900 py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         <header className="text-center">
           <div className="flex justify-center items-center gap-4 md:gap-6">
@@ -48,26 +51,45 @@ function OurDishes() {
       </div>
 
       <div className="">
-        <Marquee
-          speed={80} 
-          pauseOnHover={true}
-          className="overflow-hidden py-6"
-          autoFill={true}
-        >
-          {menuItems.map((item) => (
-            <div 
-              key={item.title} 
-              className="w-[300px] md:w-[400px] mx-4 lg:mx-8"
-            >
-              <DishesCard
-                route="/#"
-                title={item.title}
-                imageUrl={item.imageUrl}
-                logoUrl={IMAGES.deerLogo}
-              />
-            </div>
-          ))}
-        </Marquee>
+        {isMobile ? (
+
+          <div className="flex overflow-x-auto py-6">
+            {menuItems.map((item) => (
+              <div
+                key={item.title}
+                className="flex-shrink-0 w-[300px] mx-4"
+              >
+                <DishesCard
+                  route="/#"
+                  title={item.title}
+                  imageUrl={item.imageUrl}
+                  logoUrl={IMAGES.deerLogo}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Marquee
+            speed={80}
+            pauseOnHover={true}
+            className="overflow-hidden py-6"
+            autoFill={true}
+          >
+            {menuItems.map((item) => (
+              <div
+                key={item.title}
+                className="w-[300px] md:w-[400px] mx-4 lg:mx-8"
+              >
+                <DishesCard
+                  route="/#"
+                  title={item.title}
+                  imageUrl={item.imageUrl}
+                  logoUrl={IMAGES.deerLogo}
+                />
+              </div>
+            ))}
+          </Marquee>
+        )}
       </div>
     </section>
   );

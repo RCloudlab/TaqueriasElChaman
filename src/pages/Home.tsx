@@ -2,6 +2,7 @@ import Menu from "../components/layout/Menu";
 import { IMAGES } from "../constants/images"
 
 import OurDishes from "../components/layout/OurDishes"
+import SocialStats from "../components/layout/SocialStats";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       </picture>
       <Menu/>
       <OurDishes />
+      <SocialStats />
     </div>
   );
 }
