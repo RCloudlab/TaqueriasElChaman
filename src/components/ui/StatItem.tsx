@@ -1,14 +1,26 @@
 import { motion } from "framer-motion";
 import { useCountUp } from "../../hooks/CountUp";
+import type { Tstats } from "../../utils/SocialStatsType";
 
-export default function StatItem({ stat, index, inView }) {
+type TstatsItem = {
+  stat: Tstats
+  index: number
+  inView: boolean
+  link: string
+}
+
+export default function StatItem({ stat, index, inView, link }: TstatsItem) {
   const count = useCountUp(stat.target, 1500, inView);
   const IconComponent = stat.icon;
+  const openSocial = () => {
+    window.open(link, "_blank");
+  }
 
   return (
     <motion.div
       whileHover={{ scale: 1.15, y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 15 }}
+      onClick={openSocial}
       className={`
         flex items-center justify-center space-x-3 sm:space-x-4 
         opacity-0 ${inView ? 'animate-fade-in-up' : ''}

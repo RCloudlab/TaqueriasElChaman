@@ -1,3 +1,4 @@
+import { menuItems } from "../../constants/dishes";
 import { IMAGES } from "../../constants/images";
 import { useIsMobile } from "../../hooks/isMobile";
 import Diamods from "../ui/Diamods";
@@ -5,34 +6,6 @@ import DishesCard from "../ui/DishesCard";
 import Marquee from "react-fast-marquee";
 
 function OurDishes() {
-  const menuItems = [
-    {
-      title: "Quesadillas",
-      imageUrl: IMAGES.insta,
-      route: "/menu/quesadillas",
-    },
-    {
-      title: "Tacos",
-      imageUrl: IMAGES.insta,
-      route: "/menu/tacos",
-    },
-    {
-      title: "Burritos",
-      imageUrl: IMAGES.insta,
-      route: "/menu/burritos",
-    },
-    {
-      title: "Postres",
-      imageUrl: IMAGES.insta,
-      route: "/menu/postres",
-    },
-    {
-      title: "Bebidas",
-      imageUrl: IMAGES.insta,
-      route: "/menu/bebidas",
-    },
-  ];
-
   const isMobile = useIsMobile(768);
 
   return (
