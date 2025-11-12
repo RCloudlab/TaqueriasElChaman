@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { ItemsContact } from "./ItemsContact";
-import { ItemsNav } from "./ItemsNav";
-import { IMAGES } from "../../../constants/images";
+import { ItemsContact } from "../ui/ItemsContact";
+import { ItemsNav } from "../ui/ItemsNav";
+import { IMAGES } from "../../constants/images";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
   schedules,
   contactInformation,
   optionsNav,
-} from "../../../constants/navbarConstant";
-import type { ContactInformation, OptionsNav } from "./props";
+} from "../../constants/navbarConstant";
+import type { ContactInformation, OptionsNav } from "../../utils/props";
 import { IoClose } from "react-icons/io5";
 
 export const NavBarV2 = () => {
@@ -28,7 +28,9 @@ export const NavBarV2 = () => {
     /**Boton dirección */
   }
   const address = "VER UBICACIÓN ";
-  const query = encodeURIComponent(address);
+  const query = encodeURIComponent(
+    "Tejedores de Aranza 512, Vasco de Quiroga, 58230 Morelia, Mich."
+  );
   const googleUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   const openMaps = (e: any) => {
@@ -100,9 +102,7 @@ export const NavBarV2 = () => {
               />
             </a>
             <a href="#">
-              <h1 className="md:text-2xl text-sm">
-                Taquerías El Chaman
-              </h1>
+              <h1 className="md:text-2xl text-sm">Taquerías El Chaman</h1>
             </a>
           </div>
 
@@ -128,26 +128,28 @@ export const NavBarV2 = () => {
             </button>
           </div>
 
-         <button
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="hidden ml-20 max-lg:flex md:px-4 text-3xl md:text-4xl text-red-900 hover:text-red-900/80 transition-all duration-400 mt-"
-          > 
-            {isOpen ? <IoClose />: <GiHamburgerMenu />}            
+          >
+            {isOpen ? <IoClose /> : <GiHamburgerMenu />}
           </button>
-        </div>        
+        </div>
       </div>
       {/**Buttons mobile */}
-        <div className={`fex text-center mt-2 ${isOpen ? "-mb-[128px]": "mb-0"}`}>
-          <div
-            className={`${
-              isOpen ? "block" : "hidden"
-            } block lg:hidden w-[100vw] bg-gray-600/80 text-gray-750 rounded-b-md text-md -ml-8`}
-          >
-            {optionsNav.map((option: OptionsNav) => (
-              <ItemsNav styles="" key={option.id} {...option} />
-            ))}
-          </div>
+      <div
+        className={`fex text-center  ${isOpen ? "-mb-[128px]" : "mb-0"}`}
+      >
+        <div
+          className={`${
+            isOpen ? "block" : "hidden"
+          } block lg:hidden w-[100vw] bg-gray-600/80 text-gray-750 rounded-b-md text-md -ml-8`}
+        >
+          {optionsNav.map((option: OptionsNav) => (
+            <ItemsNav styles="" key={option.id} {...option} />
+          ))}
         </div>
-    </nav>    
+      </div>
+    </nav>
   );
 };
