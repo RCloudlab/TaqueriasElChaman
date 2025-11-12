@@ -1,6 +1,21 @@
 import { IMAGES } from "../../constants/images";
 
 export const OurStory = () => {
+
+  const fechaApertura = new Date("2024-07-10");
+  const hoy = new Date();
+
+  const difMeses =
+    (hoy.getFullYear() - fechaApertura.getFullYear()) * 12 +
+    (hoy.getMonth() - fechaApertura.getMonth());
+
+  const años = Math.floor(difMeses / 12);
+  const meses = difMeses % 12;
+
+  const tiempo = `${años > 0 ? años + (años === 1 ? " año" : " años") : ""}${
+    meses > 0 ? (años > 0 ? " y " : "") + meses + (meses === 1 ? " mes" : " meses") : ""
+  }`;
+
   return (
     <section className="flex flex-col md:flex-row w-full min-h-screen">
       <div className="md:w-1/2 w-full">
@@ -26,29 +41,19 @@ export const OurStory = () => {
         </h2>
 
         <p className="text-gray-700 md:leading-relaxed mb-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          quisquam fuga culpa accusamus dolores nesciunt et, est maxime repellat
-          provident inventore quis aut ea molestiae voluptatem debitis.lorem*2
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ab
-          asperiores soluta officia rem enim voluptatum dolore natus inventore
-          laudantium fugit nostrum ipsa saepe autem placeat sequi quis, nam
-          ducimus! Facere ullam nobis culpa nesciunt deleniti, animi eaque? Eos
-          repudiandae quam, quos dolore sed suscipit, illum reprehenderit natus
-          consectetur sit, nesciunt corporis distinctio. Fugiat, omnis? Eligendi
-          soluta nemo consectetur saepe?
+          Taquerías El Chamán nació de un sueño y de la pasión por la cocina. Durante varios años trabajé como panadero, aprendiendo la importancia de la dedicación, el esfuerzo diario y el trabajo con las manos. Con el tiempo, la vida me llevó a buscar un nuevo camino, y fue entonces cuando me adentré en el mundo de las taquerías, sin saber absolutamente nada, pero con ganas de aprenderlo todo.
+        </p>
+
+        <p className="text-gray-200 md:leading-relaxed mb-6">
+          Trabajé en distintas taquerías, observando, practicando y perfeccionando el sazón que hoy nos distingue. Mientras hacía mis jornadas nocturnas, al terminar, me dedicaba a construir mi propio espacio. Mesa por mesa, cajón por cajón, cocina y detalles… todo hecho a mano, con paciencia y corazón, en un local rentado que poco a poco se convirtió en hogar.
+        </p>
+
+        <p className="text-gray-200 md:leading-relaxed mb-6">
+          Hoy, después de {tiempo}, seguimos creciendo y compartiendo lo que más nos apasiona: nuestros tacos de carne al pastor, preparados con cariño y servidos en un ambiente cercano. Abrimos en horario de tarde-noche porque sabemos que los mejores tacos se disfrutan cuando el día ya bajó el ritmo.
         </p>
 
         <p className="text-gray-200 md:leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          quisquam fuga culpa accusamus dolores nesciunt et, est maxime repellat
-          provident inventore quis aut ea molestiae voluptatem debitis. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Sit enim
-          voluptatibus, ipsa eveniet dolorum deleniti vero, quo architecto
-          consectetur reiciendis, magnam laborum temporibus corporis et aut quas
-          amet. Vel, minus?Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Ut impedit excepturi unde nulla, voluptas non facilis sed? Modi,
-          voluptatum ipsam quia dignissimos aspernatur cumque sit est. Amet quis
-          provident mollitia.
+          En El Chamán, cada taco cuenta una historia, y esa historia continúa contigo.
         </p>
       </div>
     </section>
