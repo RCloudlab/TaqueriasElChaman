@@ -11,7 +11,7 @@ import tacos from "../assets/Images/tacos-image.jpg";
 import totopos from "../assets/Images/totopos-image.jpg";
 import volcan from "../assets/Images/volcan-image.jpg";
 
-import diamod from "../assets/icons/diamod.svg";
+import diamod from "../assets/Icons/diamod.svg";
 
 export const IMAGES = {
   deerLogo,
