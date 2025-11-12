@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useCountUp(end, duration = 2000, start) {
+export function useCountUp(end: number, duration = 2000, start:boolean) {
   const [count, setCount] = useState(0);
   const steps = 50;
   const stepDuration = duration / steps;
