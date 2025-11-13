@@ -1,7 +1,6 @@
 import Menu from "../components/layout/Menu";
 import { IMAGES } from "../constants/images"
 import Collaborations from "../components/layout/Collaborations"
-
 import OurDishes from "../components/layout/OurDishes"
 import SocialStats from "../components/layout/SocialStats";
 
