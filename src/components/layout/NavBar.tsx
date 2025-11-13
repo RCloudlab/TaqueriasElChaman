@@ -1,15 +1,36 @@
 import { useState, useEffect } from "react";
-import { FaSquare } from "react-icons/fa";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { ItemsContact } from "../ui/ItemsContact";
+import { ItemsNav } from "../ui/ItemsNav";
 import { IMAGES } from "../../constants/images";
+import { GiHamburgerMenu } from "react-icons/gi";
+import {
+  schedules,
+  contactInformation,
+  optionsNav,
+} from "../../constants/navbarConstant";
+import type { ContactInformation, OptionsNav } from "../../utils/props";
+import { IoClose } from "react-icons/io5";
 
-function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+export const NavBarV2 = () => {
+  /**CAMBIAR FONDO AL SCROLEAR */
   const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) setIsScrolled(true);
+      else setIsScrolled(false);
+    };
 
-  const address =
-    "Tejedores de Aranza 512, Vasco de Quiroga, 58230 Morelia, Mich.";
-  const query = encodeURIComponent(address);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  {
+    /**Boton dirección */
+  }
+  const address = "VER UBICACIÓN ";
+  const query = encodeURIComponent(
+    "Tejedores de Aranza 512, Vasco de Quiroga, 58230 Morelia, Mich."
+  );
   const googleUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   const openMaps = (e: any) => {
@@ -29,109 +50,106 @@ function NavBar() {
 
     window.open(googleUrl, "_blank", "noopener");
   };
+  {
+    /***************************************************************** */
+  }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) setIsScrolled(true);
-      else setIsScrolled(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  {
+    /**FUNCION MENÚ HAMBURGUESA */
+  }
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-black/90 backdrop-blur-md shadow-md" : "bg-transparent"
-      } text-white px-8 py-1 lg:px-12`}
+      className={`flex flex-col w-full fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+        isScrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent"
+      } text-white px-8 py-2 lg:px-12`}
     >
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between text-center sm:text-left">
-        <div className=" max-sm:text-[0.7rem] flex items-center justify-center sm:justify-start gap-4 text-ml sm:text-[12px] flex-wrap sm:ml-1">
-          <p>Lun-Sab: 6:30pm - 11:30pm</p>
-          <FaSquare className="text-gray-400 rotate-45 size-1.5" />
-          <p>Domingos: 12pm - 11:30pm</p>
+      <div className="container mx-auto relative py-2">
+        {/**Information Section */}
+        <div className="hidden md:block lg:flex justify-between text-xs pb-2 space-y-1 lg:space-y-0">
+          {/**schedules */}
+          <div className="flex justify-between space-x-5">
+            {schedules.map((schedule: ContactInformation) => (
+              <ItemsContact key={schedule.id} {...schedule} />
+            ))}
+          </div>
+
+          {/**Phone, Address */}
+          <div className="grid grid-rows-2 md:gap-4 md:flex md:justify-between">
+            {contactInformation.map((contact: ContactInformation) => (
+              <ItemsContact
+                styles="justify-star pl-0 space-y-1"
+                key={contact.id}
+                {...contact}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="hidden sm:flex items-center justify-end gap-4 text-sm py-2 flex-wrap sm:mr-1">
-          <div className=" flex items-center gap-4">
-            <p>taqueriaselchaman@gmail.com</p>
-            <FaSquare className="text-gray-400 rotate-45 size-1.5" />
-            <a
-              href="tel:+524431413799"
-              className="underline"
-              aria-label="Llamar a +52 443 141 3799"
-            >
-              +52 443 141 3799
+        {/**Dividing line */}
+        <hr className="hidden md:block border-[#3A3940] my-2 container mx-auto" />
+
+        {/**Nav section */}
+        <div className="flex justify-between -my-2 items-center md:pt-2">
+          {/**Logo, name */}
+          <div className="flex space-x-2 items-center">
+            <a href="#">
+              <img
+                src={IMAGES.deerLogo}
+                alt="Logo Taqueria Chaman"
+                className="h-10  lg:h-16 object-contain -my-3"
+              />
+            </a>
+            <a href="#">
+              <h1 className="md:text-2xl text-sm">Taquerías El Chaman</h1>
             </a>
           </div>
-          <FaSquare className="text-gray-400 rotate-45 size-1.5" />
-          <a
-            href={googleUrl}
-            onClick={openMaps}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-left"
-            aria-label="Abrir dirección en Google Maps"
+
+          {/**NAV */}
+          <div className="hidden lg:flex space-x-6 text-center max-lg:space-x-2">
+            {optionsNav.map((option: OptionsNav) => (
+              <ItemsNav key={option.id} {...option} />
+            ))}
+          </div>
+          {/**Address Button */}
+          <div>
+            <button className="hidden md:block bg-red-900 py-1 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400">
+              <a
+                href={googleUrl}
+                onClick={openMaps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" text-[10px] sm:text-sm sm:mb-4 "
+                aria-label="Abrir dirección en Google Maps"
+              >
+                {address}
+              </a>
+            </button>
+          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="hidden ml-20 max-lg:flex md:px-4 text-3xl md:text-4xl text-red-900 hover:text-red-900/80 transition-all duration-400 mt-"
           >
-            {address}
-          </a>
+            {isOpen ? <IoClose /> : <GiHamburgerMenu />}
+          </button>
         </div>
       </div>
-
-      <hr className="border-[#3A3940] my-1 container mx-auto" />
-
-      <div className="container mx-auto flex items-center justify-between">
-        <a className="flex items-center gap-3" href="#">
-          <img
-            src={IMAGES.deerLogo}
-            alt="Logo Taquerías el Chaman"
-            className="h-16 sm:h-20 object-contain"
-          />
-          <h1 className="max-sm:text text-2xl sm:text-4xl font-light">
-            Taquerías El Chaman
-          </h1>
-        </a>
-
-        <button
-          className="sm:hidden flex flex-col justify-center items-center gap-1 border border-red-600 px-4 py-2 rounded-lg hover:bg-red-900/30 transition"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Abrir menú"
+      {/**Buttons mobile */}
+      <div
+        className={`fex text-center  ${isOpen ? "-mb-[128px]" : "mb-0"}`}
+      >
+        <div
+          className={`${
+            isOpen ? "block" : "hidden"
+          } block lg:hidden w-[100vw] bg-gray-600/80 text-gray-750 rounded-b-md text-md -ml-8`}
         >
-          {isOpen ? (
-            <IoMdClose className="text-white text-2xl" />
-          ) : (
-            <IoMdMenu className="text-white text-2xl" />
-          )}
-        </button>
-      </div>
-
-      {isOpen && (
-        <div className="sm:hidden flex flex-col items-start gap-4 bg-[#111] mt-4 p-4 rounded-lg text-sm">
-          <p>taqueriaselchaman@gmail.com</p>
-
-          <a
-            href="tel:+524431413799"
-            className="underline"
-            aria-label="Llamar a +52 443 141 3799"
-          >
-            +52 443 141 3799
-          </a>
-
-          <a
-            href={googleUrl}
-            onClick={openMaps}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-left break-words"
-            aria-label="Abrir dirección en Google Maps"
-          >
-            {address}
-          </a>
+          {optionsNav.map((option: OptionsNav) => (
+            <ItemsNav styles="" key={option.id} {...option} />
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
-}
-
-export default NavBar;
+};
