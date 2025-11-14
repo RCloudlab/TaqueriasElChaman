@@ -16,11 +16,6 @@ function Menu() {
             MENÚ
           </h2>
 
-          {/* OPCION BOTON 1*/}
-          <button className=" bg-white text-black py-2 tracking-wide rounded-lg border hover:border-red-900/30 hover:bg-black hover:text-red-900 transition-colors duration-300 max-lg:w-30">
-            Ver menú
-          </button>
-
           {/*OPCIÓN BOTON 2 */}
           <button
             className="relative overflow-hidden bg-white text-black py-2 px-8 tracking-wide rounded-lg border

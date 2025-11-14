@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { ItemsContact } from "./ItemsContact";
-import { ItemsNav } from "./ItemsNav";
-import { IMAGES } from "../../../constants/images";
+import { ItemsContact } from "../ui/ItemsContact";
+import { ItemsNav } from "../ui/ItemsNav";
+import { IMAGES } from "../../constants/images";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
   schedules,
   contactInformation,
   optionsNav,
-} from "../../../constants/navbarConstant";
-import type { ContactInformation, OptionsNav } from "./props";
+} from "../../constants/navbarConstant";
+import type { ContactInformation, OptionsNav } from "../../utils/props";
 import { IoClose } from "react-icons/io5";
 
 export const NavBarV2 = () => {
@@ -28,7 +28,9 @@ export const NavBarV2 = () => {
     /**Boton dirección */
   }
   const address = "VER UBICACIÓN ";
-  const query = encodeURIComponent(address);
+  const query = encodeURIComponent(
+    "Tejedores de Aranza 512, Vasco de Quiroga, 58230 Morelia, Mich."
+  );
   const googleUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   const openMaps = (e: any) => {
