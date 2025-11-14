@@ -93,16 +93,16 @@ export const NavBarV2 = () => {
         {/**Nav section */}
         <div className="flex justify-between -my-2 items-center md:pt-2">
           {/**Logo, name */}
-          <div className="flex space-x-2 items-center">
+          <div className="flex space-x-3 items-center">
             <a href="#">
               <img
                 src={IMAGES.deerLogo}
                 alt="Logo Taqueria Chaman"
-                className="h-10  lg:h-16 object-contain -my-3"
+                className="h-16 object-contain mt-2"
               />
             </a>
             <a href="#">
-              <h1 className="md:text-2xl text-sm">Taquerías El Chaman</h1>
+              <h1 className="md:text-2xl text-lg">Taquerías El Chaman</h1>
             </a>
           </div>
 
@@ -130,7 +130,7 @@ export const NavBarV2 = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="hidden ml-20 max-lg:flex md:px-4 text-3xl md:text-4xl text-red-900 hover:text-red-900/80 transition-all duration-400 mt-"
+            className="hidden ml-20 max-lg:flex md:px-4 text-5xl text-red-900 hover:text-red-900/80 transition-all duration-400"
           >
             {isOpen ? <IoClose /> : <GiHamburgerMenu />}
           </button>
@@ -138,7 +138,7 @@ export const NavBarV2 = () => {
       </div>
       {/**Buttons mobile */}
       <div
-        className={`fex text-center  ${isOpen ? "-mb-[128px]" : "mb-0"}`}
+        className={`fex text-center mt-2 ${isOpen ? "-mb-[128px]" : "mb-0"}`}
       >
         <div
           className={`${
