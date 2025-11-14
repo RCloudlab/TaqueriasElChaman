@@ -1,9 +1,13 @@
-import deerLogo from "../assets/Images/deer-logo.svg";
-import insta from "../assets/Images/Insta.jpg";
-import tacosHome from "../assets/Images/home-image.avif";
-import tacosHomejpg from "../assets/Images/home-image.jpg";
-import tacosHomeweb from "../assets/Images/home-image.webp";
-import tacosHomeMobile from "../assets/Images/home-image-mobile.png";
+import deerLogo from "../assets/images/deer-logo.svg";
+import insta from "../assets/images/Insta.jpg";
+import tacosHome from "../assets/images/home-image.avif";
+import tacosHomejpg from "../assets/images/home-image.jpg";
+import tacosHomeweb from "../assets/images/home-image.webp";
+import tacosHomeMobile from "../assets/images/home-image-mobile.png";
+import storyMobile from "../assets/Images/home-our-sory-mobile.png";
+import story from "../assets/Images/home-our-sory.avif";
+import storyweb from "../assets/Images/home-our-soryweb.webp";
+import storyjpg from "../assets/Images/home-our-soryjpg.jpg";
 import buttonMenu from "../assets/Images/b-menu.gif";
 import burrito from "../assets/Images/burrito-image.jpg";
 import groseria from "../assets/Images/groseria-image.jpg";
@@ -20,6 +24,10 @@ export const IMAGES = {
   tacosHomejpg,
   tacosHomeweb,
   tacosHomeMobile,
+  storyMobile,
+  story,
+  storyweb,
+  storyjpg,
   buttonMenu,
   burrito,
   groseria,
