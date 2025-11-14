@@ -4,6 +4,7 @@ import { IMAGES } from "../constants/images";
 
 import OurDishes from "../components/layout/OurDishes";
 import SocialStats from "../components/layout/SocialStats";
+import { PhotoGalery } from "../components/layout/PhotoGalery";
 
 function Home() {
   return (
@@ -24,9 +25,9 @@ function Home() {
       </picture>
       <Menu />
       <OurStory />
-      <Menu />
       <OurDishes />
       <SocialStats />
+      <PhotoGalery />
     </div>
   );
 }
