@@ -1,6 +1,8 @@
 import { IMAGES } from "../constants/images";
 import OurServices from "../components/ui/OurServices";
+import Menu from "../components/layout/Menu";
 import OurDishes from "../components/layout/OurDishes"
+import SocialStats from "../components/layout/SocialStats";
 
 function Home() {
   return (
@@ -19,8 +21,10 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
+      <Menu/>
       <OurServices />
       <OurDishes />
+      <SocialStats />
     </div>
   );
 }

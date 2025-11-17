@@ -1,7 +1,7 @@
 import type {
   ContactInformation,
   OptionsNav,
-} from "../components/layout/NavBar/props";
+} from "../utils/props";
 
 /**ARREGLO GENERADOR DE LA INFORMACION: Horarios, telefono y dirección */
 export const schedules: ContactInformation[] = [
