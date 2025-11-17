@@ -22,7 +22,7 @@ function Menu() {
              hover:border-red-900 transition-all duration-500
              max-lg:w-30 group hover:bg-black hover:text-white hover:font-bold hover:scale-110"
           >
-            <span className="relative z-10 transition-colors duration-500">
+            <span className="text-xl relative z-10 transition-colors duration-500">
               Ver menú
             </span>
 

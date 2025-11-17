@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
-import { ItemsContact } from "../ui/ItemsContact";
-import { ItemsNav } from "../ui/ItemsNav";
-import { IMAGES } from "../../constants/images";
+import { ItemsContact } from "./ItemsContact";
+import { ItemsNav } from "./ItemsNav";
+import { IMAGES } from "../../../constants/images";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
   schedules,
   contactInformation,
   optionsNav,
-} from "../../constants/navbarConstant";
-import type { ContactInformation, OptionsNav } from "../../utils/props";
+} from "../../../constants/navbarConstant";
+import type { ContactInformation, OptionsNav } from "./props";
 import { IoClose } from "react-icons/io5";
 
-export const NavBarV2 = () => {
+export const NavBar = () => {
   /**CAMBIAR FONDO AL SCROLEAR */
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
@@ -28,9 +28,7 @@ export const NavBarV2 = () => {
     /**Boton dirección */
   }
   const address = "VER UBICACIÓN ";
-  const query = encodeURIComponent(
-    "Tejedores de Aranza 512, Vasco de Quiroga, 58230 Morelia, Mich."
-  );
+  const query = encodeURIComponent(address);
   const googleUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   const openMaps = (e: any) => {
@@ -98,7 +96,7 @@ export const NavBarV2 = () => {
               <img
                 src={IMAGES.deerLogo}
                 alt="Logo Taqueria Chaman"
-                className="h-16 object-contain mt-2"
+                className="h-16 object-contain md:-my-2 mt-2"
               />
             </a>
             <a href="#">
@@ -130,7 +128,7 @@ export const NavBarV2 = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="hidden ml-20 max-lg:flex md:px-4 text-5xl text-red-900 hover:text-red-900/80 transition-all duration-400"
+            className="hidden ml-20 max-lg:flex md:px-4 text-3xl text-red-900 hover:text-red-900/80 transition-all duration-400"
           >
             {isOpen ? <IoClose /> : <GiHamburgerMenu />}
           </button>
