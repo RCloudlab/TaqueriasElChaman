@@ -18,8 +18,8 @@ export const OurStory = () => {
   }`;
 
   return (
-    <section className="flex flex-col md:flex-row w-full min-h-screen">
-      <div className="md:w-1/2 w-full">
+    <section className="flex flex-col md:flex-row w-full">
+      <div className="md:w-1/2 w-full ">
         <picture>
           <source
             media="(max-width: 768px)"
@@ -31,7 +31,7 @@ export const OurStory = () => {
           <img
             src={IMAGES.storyjpg}
             alt="Taquero preparando tacos al pastor"
-            className="w-full h-full object-cover"
+            className="w-full h-auto max-lg:h-full max-lg:object-cover object-contain"
           />
         </picture>
       </div>
