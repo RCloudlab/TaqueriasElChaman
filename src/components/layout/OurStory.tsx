@@ -37,32 +37,33 @@ export const OurStory = () => {
       </div>
 
       <div className="text-pretty md:w-1/2 w-full bg-neutral-900 text-white p-10 flex flex-col justify-center">
-        <h2 className=" text-center text-2xl sm:text-4xl font-bold text-red-900 mb-6">
+        <h2 className=" text-center text-2xl sm:text-4xl font-bold text-red-900 mb-12">
           ¡NUESTRA HISTORIA!
         </h2>
+        <div className="px-3 lg:*:text-2xl h-[70%] flex flex-col justify-around">
+          <p className="text-gray-700 md:leading-relaxed  mb-6 ">
+            Taquerías El Chamán nació de un sueño y de mi pasión por la cocina.
+            Tras años como panadero, busqué un nuevo camino y me adentré en el
+            mundo de las taquerías sin experiencia, pero con ganas de aprender.
+          </p>
 
-        <p className="text-gray-700 md:leading-relaxed mb-6">
-          Taquerías El Chamán nació de un sueño y de mi pasión por la cocina.
-          Tras años como panadero, busqué un nuevo camino y me adentré en el
-          mundo de las taquerías sin experiencia, pero con ganas de aprender.
-        </p>
+          <p className="text-gray-200 md:leading-relaxed mb-6 ">
+            Trabajé en varios locales hasta perfeccionar el sazón que hoy nos
+            distingue, mientras construía mi propio espacio a mano, poco a poco,
+            hasta convertirlo en hogar.
+          </p>
 
-        <p className="text-gray-200 md:leading-relaxed mb-6">
-          Trabajé en varios locales hasta perfeccionar el sazón que hoy nos
-          distingue, mientras construía mi propio espacio a mano, poco a poco,
-          hasta convertirlo en hogar.
-        </p>
+          <p className="text-gray-200 md:leading-relaxed mb-6 ">
+            Hoy, después de {tiempo}, seguimos compartiendo nuestra pasión:
+            nuestros platillos preparados con cariño y servidos en un ambiente
+            cercano, ideales para disfrutar por la tarde y la noche.
+          </p>
 
-        <p className="text-gray-200 md:leading-relaxed mb-6">
-          Hoy, después de {tiempo}, seguimos compartiendo nuestra pasión:
-          nuestros platillos preparados con cariño y servidos en un ambiente
-          cercano, ideales para disfrutar por la tarde y la noche.
-        </p>
-
-        <p className="text-gray-200 md:leading-relaxed">
-          En El Chamán, cada taco cuenta una historia, y esa historia continúa
-          contigo.
-        </p>
+          <p className="text-gray-200 md:leading-relaxed ">
+            En El Chamán, cada taco cuenta una historia, y esa historia continúa
+            contigo.
+          </p>
+        </div>
       </div>
     </section>
   );

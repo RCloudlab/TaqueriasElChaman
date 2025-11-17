@@ -24,7 +24,6 @@ function Home() {
       </picture>
       <Menu />
       <OurStory />
-      <Menu />
       <OurDishes />
       <SocialStats />
     </div>
