@@ -15,6 +15,17 @@ import tacos from "../assets/Images/tacos-image.jpg";
 import totopos from "../assets/Images/totopos-image.jpg";
 import volcan from "../assets/Images/volcan-image.jpg";
 
+/*Photo Galery */
+import pgBurritos from "../assets/Images/pg-Burritos.jpg";
+import pgCliente from "../assets/Images/pg-cliente.jpg";
+import pgfoto from "../assets/Images/pg-foto.jpg";
+import pgMesa from "../assets/Images/pg-mesa.jpg";
+import pgQuesadillas from "../assets/Images/pg-quesadillas.jpg";
+import pgSalsa from "../assets/Images/pg-salsa.jpg";
+import pgTBistec from "../assets/Images/pg-t-bistec.jpg";
+import pgTPastor from "../assets/Images/pg-t-pastor.jpg";
+import pgTrompo from "../assets/Images/pg-trompo.jpg";
+
 import diamod from "../assets/Icons/diamod.svg";
 
 export const IMAGES = {
@@ -34,6 +45,16 @@ export const IMAGES = {
   tacos,
   totopos,
   volcan,
+  /*Photo Galeria */
+  pgBurritos,
+  pgCliente,
+  pgMesa,
+  pgQuesadillas,
+  pgSalsa,
+  pgTBistec,
+  pgTPastor,
+  pgTrompo,
+  pgfoto,
 };
 
 export const ICONS = {
