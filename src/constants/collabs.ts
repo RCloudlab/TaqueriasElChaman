@@ -20,7 +20,7 @@ export const collaborationsData = [
     {
         id: 3,
         titulo: 'ASÍ SE PREPARAN UNOS TACOS AL PASTOR',
-        redSocial: 'KITTY FOOGFACEBOOK',
+        redSocial: 'KITTY FOOD / FACEBOOK',
         vistas: '02 Comentarios',
         imagen: IMAGES.collab3,
         fecha: '16 Jun',
