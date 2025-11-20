@@ -29,7 +29,7 @@ export const NavBar = () => {
   }
   const address = "VER UBICACIÓN ";
   const query = encodeURIComponent(address);
-  const googleUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+  const googleUrl = `https://www.google.com/maps/place/Tacos+El+Chaman/data=!4m2!3m1!1s0x0:0x3fad54bab9095e7e?sa=X&ved=1t:2428&ictx=111`;
 
   const openMaps = (e: any) => {
     e.preventDefault();
