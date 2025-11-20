@@ -14,7 +14,9 @@ import groseria from "../assets/Images/groseria-image.jpg";
 import tacos from "../assets/Images/tacos-image.jpg";
 import totopos from "../assets/Images/totopos-image.jpg";
 import volcan from "../assets/Images/volcan-image.jpg";
-
+import collab1 from "../assets/Images/colab1.webp";
+import collab2 from "../assets/Images/colab2.webp";
+import collab3 from "../assets/Images/colab3.webp";
 import diamod from "../assets/Icons/diamod.svg";
 
 export const IMAGES = {
@@ -34,6 +36,9 @@ export const IMAGES = {
   tacos,
   totopos,
   volcan,
+  collab1,
+  collab2,
+  collab3,
 };
 
 export const ICONS = {
