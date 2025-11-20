@@ -1,26 +1,7 @@
 import { IMAGES } from "../../constants/images";
+import Diamods from "./Diamods";
 import OurServicesCard from "./OurServicesCard";
-
-const CARDS_NS = [
-    {
-        id: 1,
-        imagen: IMAGES.ourServices1,
-        titulo: 'Servicio a Domicilio',
-        descripcion: "¡Y esto es lo que traigo de mi costa Pa' que todo el mundo lo baile Y que nadie se quede sentado porque será multado ¡Y vámonos todos con el baile costeño pues se va!",
-    },
-    {
-        id: 2,
-        imagen: IMAGES.ourServices3,
-        titulo: 'Catering para eventos',
-        descripcion: "¡Ay!, arremángala, arrempújala Arremángala, arrempújala Arremángala, arrempújala Arremángala, arrempújala Arremángala, arrempújala Arremángala, arrempújala Arremángala, arrempújala",
-    },
-    {
-        id: 3,
-        imagen: IMAGES.ourServices3,
-        titulo: 'Pedidos para llevar',
-        descripcion: "Arremángala, arrempújala, sí, Arremángala, arrempújala, no Arremángala, arrempújala, sí Arremángala, arrempújala, no Arremángala, arrempújala, sí Arremángala, arrempújala, no",
-    }
-];
+import { CARDS_NS } from "../../constants/services";
 
 //Checar los colores, que sean los del figma
 
@@ -31,11 +12,12 @@ function OurServices() {
             <div className="flex justify-center py-4">
                 <img src={IMAGES.deerLogo} alt="logo" className="w-10" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2.5 uppercase">Nuestros Servicios</h2>
-            <div className="flex justify-center pt-4 pb-8">
-                Aqui van los diamantes
+            <h2 className="text-black text-4xl md:text-5xl font-bold">Nuestros Servicios</h2>
+            <div className="w-px h-5 bg-red-600 mx-auto mt-1 mb-1 md:mb-2"></div>
+            <div className="flex justify-center pt-2 pb-6">
+                <Diamods numberOfDiamonds={4} />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {CARDS_NS.map((service) => (
                     <OurServicesCard
                         key={service.id}
@@ -46,17 +28,16 @@ function OurServices() {
                 ))}
             </div>
 
-            {/* IMAGENES DE FONDO Creo que no son del todo responsive */}
             <img
                 src={IMAGES.ourServicesVolcan}
                 alt="Taco decorativo"
-                className=" absolute bottom-0 left-0 w-30 md:w-40 lg:w-50 opacity-90 hidden md:block z-10 "/>
-
+                className="absolute bottom-0 left-0 w-30 md:w-40 lg:w-50 opacity-90 hidden lg:block z-10"
+            />
             <img
                 src={IMAGES.ourServicesFondo}
                 alt="Decoración de hojas"
-                className=" absolute top-10 right-10 w-32 md:w-40 lg:w-48 opacity-40 hidden md:block z-10 "/>
-                
+                className=" absolute top-10 right-10 w-32 md:w-40 lg:w-48 opacity-40 hidden md:block z-10 " />
+
         </section>
     );
 }

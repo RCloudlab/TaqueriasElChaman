@@ -23,11 +23,10 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
-      <Menu />
-      <OurStory />
-      <Menu/>
-      <OurServices />
       <OurDishes />
+      <Menu />
+      <OurServices />
+      <OurStory />
       <SocialStats />
       <Collaborations />
     </div>

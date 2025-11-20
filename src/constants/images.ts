@@ -15,10 +15,10 @@ import tacos from "../assets/Images/tacos-image.jpg";
 import totopos from "../assets/Images/totopos-image.jpg";
 import volcan from "../assets/Images/volcan-image.jpg";
 import ourServices1 from '../assets/Images/home-delivery-image.webp';
+import ourServices2 from '../assets/Images/catering-our-services.webp';
 import ourServices3 from '../assets/Images/takeaway-orders-image.webp';
 import ourServicesVolcan from '../assets/Images/volcan.webp';
 import ourServicesFondo from '../assets/Images/image 61.webp';
-
 import collab1 from "../assets/Images/colab1.webp";
 import collab2 from "../assets/Images/colab2.webp";
 import collab3 from "../assets/Images/colab3.webp";
@@ -32,6 +32,7 @@ export const IMAGES = {
   tacosHomeweb,
   tacosHomeMobile,
   ourServices1,
+  ourServices2,
   ourServices3,
   ourServicesVolcan,
   ourServicesFondo,
