@@ -1,6 +1,7 @@
+import { IMAGES } from "../constants/images";
+import OurServices from "../components/ui/OurServices";
 import Menu from "../components/layout/Menu";
 import { OurStory } from "../components/layout/OurStory";
-import { IMAGES } from "../constants/images";
 import Collaborations from "../components/layout/Collaborations"
 import OurDishes from "../components/layout/OurDishes";
 import SocialStats from "../components/layout/SocialStats";
@@ -22,9 +23,10 @@ function Home() {
           className="w-full h-screen object-cover md:h-auto"
         />
       </picture>
-      <Menu />
-      <OurStory />
       <OurDishes />
+      <Menu />
+      <OurServices />
+      <OurStory />
       <SocialStats />
       <Collaborations />
     </div>
