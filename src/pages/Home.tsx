@@ -1,7 +1,7 @@
 import Menu from "../components/layout/Menu";
 import { OurStory } from "../components/layout/OurStory";
 import { IMAGES } from "../constants/images";
-
+import Collaborations from "../components/layout/Collaborations";
 import OurDishes from "../components/layout/OurDishes";
 import SocialStats from "../components/layout/SocialStats";
 import { PhotoGalery } from "../components/layout/PhotoGalery";
@@ -28,6 +28,7 @@ function Home() {
       <OurDishes />
       <SocialStats />
       <PhotoGalery />
+      <Collaborations />
     </div>
   );
 }
