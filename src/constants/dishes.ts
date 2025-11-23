@@ -2,7 +2,7 @@ import { IMAGES } from "./images";
 
 export const menuItems = [
     {
-      title: "groseria",
+      title: "Groseria",
       imageUrl: IMAGES.groseria,
       route: "/menu/quesadillas",
     },
@@ -17,7 +17,7 @@ export const menuItems = [
       route: "/menu/burritos",
     },
     {
-      title: "totopos",
+      title: "Totopos",
       imageUrl: IMAGES.totopos,
       route: "/menu/postres",
     },
