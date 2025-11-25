@@ -6,11 +6,17 @@ interface CollaborationsCardProps {
     vistas: string;
     imagen: string;
     fecha: string;
+    link: string;
 }
 
-const CollaborationsCard: React.FC<CollaborationsCardProps> = ({ titulo, redSocial, vistas, imagen, fecha }) => {
+const CollaborationsCard: React.FC<CollaborationsCardProps> = ({ titulo, redSocial, vistas, imagen, fecha, link }) => {
     return (
-        <div className='flex flex-col h-full bg-white border border-gray-100 shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group'>
+        <a 
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className='flex flex-col h-full bg-white border border-gray-100 shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group cursor-pointer'
+        >
             <div className='relative'>
                 <img src={imagen} alt={titulo} className='w-full h-48 object-cover'/>
                 <div className='absolute bottom-0 left-0 z-10 bg-[#C00F0C] text-white py-1.5 pl-4 pr-4 text-base skew-x-[20deg] origin-bottom-left'> 
@@ -24,10 +30,9 @@ const CollaborationsCard: React.FC<CollaborationsCardProps> = ({ titulo, redSoci
                 <h3 className='text-lg font-bold text-gray-900 mb-4'>{titulo}</h3>
                 <div>
                     <p className='text-[#74787C] '>{vistas}</p>
-
                 </div>
             </div>
-        </div>
+        </a>
     );
 }
 
