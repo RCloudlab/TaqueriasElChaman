@@ -23,6 +23,7 @@ function Collaborations() {
                                 vistas={colab.vistas}
                                 imagen={colab.imagen}
                                 fecha={colab.fecha}
+                                link={colab.link}
                             />
                         ))}
                     </div>
