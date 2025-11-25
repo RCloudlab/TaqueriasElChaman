@@ -22,6 +22,13 @@ import ourServicesFondo from '../assets/Images/image 61.webp';
 import collab1 from "../assets/Images/colab1.webp";
 import collab2 from "../assets/Images/colab2.webp";
 import collab3 from "../assets/Images/colab3.webp";
+import gallery1 from "../assets/Images/gallery-1.webp";
+import gallery2 from "../assets/Images/gallery-2.webp";
+import gallery3 from "../assets/Images/gallery-3.webp";
+import gallery4 from "../assets/Images/gallery-4.webp";
+import gallery5 from "../assets/Images/gallery-5.webp";
+import gallery6 from "../assets/Images/gallery-6.webp";
+import gallerybg from "../assets/Images/gallery-bg.webp";
 import diamod from "../assets/Icons/diamod.svg";
 
 export const IMAGES = {
@@ -49,6 +56,13 @@ export const IMAGES = {
   collab1,
   collab2,
   collab3,
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallerybg
 };
 
 export const ICONS = {
