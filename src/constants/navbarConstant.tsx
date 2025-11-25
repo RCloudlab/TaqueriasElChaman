@@ -33,27 +33,27 @@ export const contactInformation: ContactInformation[] = [
 export const optionsNav: OptionsNav[] = [
   {
     id: "5",
-    ref: "#",
+    ref: "/",
     text: "Home",
   },
   {
     id: "6",
-    ref: "#",
+    ref: "/menu",
     text: "Menú",
   },
   {
     id: "7",
-    ref: "#",
+    ref: "/",
     text: "Nuestra Historia",
   },
   {
     id: "8",
-    ref: "#",
+    ref: "/",
     text: "Ubicacion",
   },
   {
     id: "9",
-    ref: "#",
+    ref: "/",
     text: "Contacto",
   },
 ];

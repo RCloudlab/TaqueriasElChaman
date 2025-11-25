@@ -1,6 +1,6 @@
 import { IMAGES } from "../constants/images";
 import OurServices from "../components/ui/OurServices";
-import Menu from "../components/layout/Menu";
+import Menu from "../components/layout/MenuSection";
 import { OurStory } from "../components/layout/OurStory";
 import Collaborations from "../components/layout/Collaborations"
 import OurDishes from "../components/layout/OurDishes";
