@@ -41,7 +41,8 @@ export const PhotoGalery = () => {
   };
 
   const openLightbox = (index: number) => {
-    setCurrentIndex(index - 1);
+    // Aseguramos que el índice se ajuste correctamente si 'galery' no es base 1
+    setCurrentIndex(index - 1); 
     setLightboxOpen(true);
   };
 
@@ -56,7 +57,7 @@ export const PhotoGalery = () => {
   };
 
   return (
-    <section className="h-96 w-full relative :text-white">
+    <section className="h-96 w-full relative text-white">
       <div className="h-2/3 bg-black px-10">
         <div className="text-white flex flex-col container mx-auto">
           <hr className=" border-[#3A3940] container mb-14 mx-auto" />
@@ -66,39 +67,41 @@ export const PhotoGalery = () => {
           </button>
 
           <div className="flex justify-between">
-            <h3 className="tracking-widest font-bold text-sm md:text-2xl">
+            <h3 className="tracking-widest font-bold text-xl md:text-3xl">
               GALERIA DE FOTOS
             </h3>
             <div className="space-x-2">
               <button
                 onClick={() => sliderRef.current?.slickPrev()}
-                className="border"
+                className="border p-2 rounded-full hover:bg-white/10 transition"
               >
-                <ArrowLeft className="text-white" />
+                <ArrowLeft className="text-white w-5 h-5" />
               </button>
               <button
                 onClick={() => sliderRef.current?.slickNext()}
-                className="border"
+                className="border p-2 rounded-full hover:bg-white/10 transition"
               >
-                <ArrowRight className="text-white" />
+                <ArrowRight className="text-white w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white w-full h-1/3"></div>
+      <div className="bg-white w-full h-2/4"></div>
 
-      <div className="absolute top-40 w-full px-1">
+      <div className="absolute top-36 w-full px-1">
         <Slider ref={sliderRef} {...settings}>
           {galery.map((g) => (
-            <div key={g.id} className="px-1 cursor-pointer overflow-hidden">
-              <img
-                onClick={() => openLightbox(g.id)}
-                src={g.url}
-                alt={g.alt}
-                className="w-48 h-48 m-auto sm:w-48 sm:h-48 object-cover rounded-xl space-x-1 transform duration-500 hover:scale-110"
-              />
+            <div key={g.id} className="px-1 cursor-pointer">
+              <div className="h-60 rounded-xl overflow-hidden shadow-lg">
+                <img
+                  onClick={() => openLightbox(g.id)}
+                  src={g.url}
+                  alt={g.alt}
+                  className="w-full h-full object-cover transform duration-500 hover:scale-110"
+                />
+              </div>
             </div>
           ))}
         </Slider>
@@ -122,7 +125,7 @@ export const PhotoGalery = () => {
 
               <img
                 src={galery[currentIndex].url}
-                className="max-h-[80vh] w-[100vh] object-cover rounded-md shadow-lg"
+                className="max-h-[80vh] w-auto object-contain rounded-md shadow-lg" // Usar w-auto para mejor adaptación en lightbox
               />
 
               <button
