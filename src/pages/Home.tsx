@@ -5,6 +5,7 @@ import { OurStory } from "../components/layout/OurStory";
 import Collaborations from "../components/layout/Collaborations"
 import OurDishes from "../components/layout/OurDishes";
 import SocialStats from "../components/layout/SocialStats";
+import { PhotoGalery } from "../components/layout/PhotoGalery";
 import Reviews from "../components/layout/Reviews";
 
 function Home() {
@@ -29,6 +30,7 @@ function Home() {
       <OurServices />
       <OurStory />
       <SocialStats />
+      <PhotoGalery />
       <Collaborations />
       <Reviews/>
     </div>
