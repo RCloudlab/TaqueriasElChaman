@@ -92,14 +92,14 @@ export const NavBar = () => {
         <div className="flex justify-between -my-2 items-center md:pt-2">
           {/**Logo, name */}
           <div className="flex space-x-3 items-center">
-            <a href="#">
+            <a href="/">
               <img
                 src={IMAGES.deerLogo}
                 alt="Logo Taqueria Chaman"
                 className="h-16 object-contain md:-my-2 mt-2"
               />
             </a>
-            <a href="#">
+            <a href="/">
               <h1 className="md:text-2xl text-lg">Taquerías El Chaman</h1>
             </a>
           </div>

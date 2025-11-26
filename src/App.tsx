@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Footer from "./components/layout/Footer";
 import { NavBar } from "./components/layout/NavBar/NavBar";
-import MainMenu from "./pages/MainMenu";
+import MenuAll from "./components/layout/MenuAll";
 
 function App() {
   return (
@@ -12,8 +12,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/menu/categories" element={<MenuAll />} />
+        <Route path="/menu/categories/:categoryId" element={<MenuAll />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/menu" element={<MainMenu />} />
       </Routes>
       <Footer />
     </BrowserRouter>

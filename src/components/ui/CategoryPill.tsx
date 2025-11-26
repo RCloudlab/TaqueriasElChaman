@@ -1,4 +1,3 @@
-
 type CategoryPillProps = {
   label: string;
   isActive: boolean;

@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { Flame } from "lucide-react";
 import type { MenuItem } from "../../utils/MenuTypes";
+import ImagenCloudinary from "./ImageCloudinary";
 
 const FoodCard = memo(
   ({ item, onClick }: { item: MenuItem; onClick: () => void }) => {
@@ -13,11 +14,13 @@ const FoodCard = memo(
       >
         {/* IMAGEN */}
         <div className="relative h-48 w-full overflow-hidden bg-zinc-800">
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          <ImagenCloudinary
+            publicId={item.image}
+            anchoDeseado={600} 
+            altText={item.title}
+            className="imagen-redondeada"
           />
+          
 
           {/* ETIQUETA "POPULAR" */}
           {item.tag === "Popular" && (
@@ -34,6 +37,14 @@ const FoodCard = memo(
 
         {/* INFO */}
         <div className="p-4 flex flex-col flex-grow">
+          {/* NUEVO: TIPO DE PRODUCTO */}
+          {item.type && (
+            <span className="text-orange-400 text-xs font-semibold tracking-wide uppercase">
+              {item.type}
+            </span>
+          )}
+
+          {/* TÍTULO */}
           <h3 className="text-white font-bold text-xl uppercase mb-1">
             {item.title}
           </h3>
@@ -45,7 +56,7 @@ const FoodCard = memo(
           {/* PRECIO MUY GRANDE */}
           <div className="mt-4 flex justify-center">
             <span className="text-orange-500 font-extrabold text-4xl drop-shadow-lg">
-              ${item.price}
+              ${item.price} <span className="text-sm ">MXN</span>
             </span>
           </div>
         </div>

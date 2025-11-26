@@ -33,7 +33,7 @@ function OurDishes() {
                 className="flex-shrink-0 w-[300px] mx-4"
               >
                 <DishesCard
-                  route="/#"
+                  route={item.route}
                   title={item.title}
                   imageUrl={item.imageUrl}
                   logoUrl={IMAGES.deerLogo}

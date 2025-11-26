@@ -5,5 +5,6 @@ export type MenuItem = {
   price: number;
   image: string;
   category: string;
+  type?: string;
   tag?: "Popular";
 };

@@ -26,9 +26,7 @@ function Menu() {
                         {menuMain.map((item) => (
                             <div key={item.id} className="w-full max-w-xs hover:-translate-y-2 transition-transform duration-300">
                                 <MenuCard 
-                                    nombre={item.nombre} 
-                                    imagen={item.imagen} 
-                                />
+                                    nombre={item.nombre} imagen={item.imagen} categoryId={item.categoryId} />
                             </div>
                         ))}
                     </div>
