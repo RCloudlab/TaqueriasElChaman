@@ -14,6 +14,18 @@ import groseria from "../assets/Images/groseria-image.jpg";
 import tacos from "../assets/Images/tacos-image.jpg";
 import totopos from "../assets/Images/totopos-image.jpg";
 import volcan from "../assets/Images/volcan-image.jpg";
+
+/*Photo Galery */
+import pgBurritos from "../assets/Images/pg-Burritos.jpg";
+import pgCliente from "../assets/Images/pg-cliente.jpg";
+import pgfoto from "../assets/Images/pg-foto.jpg";
+import pgMesa from "../assets/Images/pg-mesa.jpg";
+import pgQuesadillas from "../assets/Images/pg-quesadillas.jpg";
+import pgSalsa from "../assets/Images/pg-salsa.jpg";
+import pgTBistec from "../assets/Images/pg-t-bistec.jpg";
+import pgTPastor from "../assets/Images/pg-t-pastor.jpg";
+import pgTrompo from "../assets/Images/pg-trompo.jpg";
+
 import ourServices1 from '../assets/Images/home-delivery-image.webp';
 import ourServices2 from '../assets/Images/catering-our-services.webp';
 import ourServices3 from '../assets/Images/takeaway-orders-image.webp';
@@ -54,6 +66,16 @@ export const IMAGES = {
   tacos,
   totopos,
   volcan,
+  /*Photo Galeria */
+  pgBurritos,
+  pgCliente,
+  pgMesa,
+  pgQuesadillas,
+  pgSalsa,
+  pgTBistec,
+  pgTPastor,
+  pgTrompo,
+  pgfoto,
   collab1,
   collab2,
   collab3,
