@@ -6,7 +6,7 @@ import FoodCard from "../ui/FoodCard";
 import CategoryPill from "../ui/CategoryPill";
 import { IMAGES } from "../../constants/images";
 import { useNavigate, useParams } from "react-router-dom";
-import ImagenCloudinary from "../ui/ImageCloudinary";
+import ImagenCloudinary from "../../hooks/ImageCloudinary";
 
 const MenuAll = () => {
   const { categoryId } = useParams();

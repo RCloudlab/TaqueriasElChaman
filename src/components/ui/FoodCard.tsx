@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Flame } from "lucide-react";
 import type { MenuItem } from "../../utils/MenuTypes";
-import ImagenCloudinary from "./ImageCloudinary";
+import ImagenCloudinary from "../../hooks/ImageCloudinary";
 
 const FoodCard = memo(
   ({ item, onClick }: { item: MenuItem; onClick: () => void }) => {

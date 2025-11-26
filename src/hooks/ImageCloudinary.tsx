@@ -1,7 +1,7 @@
 import { AdvancedImage } from '@cloudinary/react'; 
 import { fill } from '@cloudinary/url-gen/actions/resize';
 import { quality, format } from '@cloudinary/url-gen/actions/delivery';
-import { cld } from '../../utils/cloudinary'; 
+import { cld } from '../utils/cloudinary'; 
 
 type ImagenCloudinaryProps = {
   publicId: string;
