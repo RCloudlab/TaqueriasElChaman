@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
     "@cloudinary/react": "^1.14.3",
     "@cloudinary/url-gen": "^1.22.0",
     "framer-motion": "^12.23.24",
@@ -20,6 +22,8 @@
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^10.0.0",
     "react-router-dom": "^7.9.4",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^12.0.3"
   },
   "devDependencies": {
@@ -27,6 +31,7 @@
     "@tailwindcss/postcss": "^4.1.14",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
+    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react-swc": "^4.1.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.36.0",
