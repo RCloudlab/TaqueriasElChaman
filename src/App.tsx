@@ -5,10 +5,12 @@ import Menu from "./pages/Menu";
 import Footer from "./components/layout/Footer";
 import { NavBar } from "./components/layout/NavBar/NavBar";
 import MenuAll from "./components/layout/MenuAll";
+import ScrollToTop from "./components/ui/ScrollTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -188,13 +188,6 @@ function Footer() {
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
-              <a href="https://www.instagram.com/taqueriaselchaman/">
-                <img
-                  src={IMAGES.insta}
-                  alt="Instagram 4"
-                  className="aspect-square object-cover w-full h-full"
-                />
-              </a>
             </div>
           </div>
         </div>
