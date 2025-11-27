@@ -195,7 +195,7 @@ export const MENU_ITEMS = [
     title: "Pastor",
     price: 20,
     description: "Tostada crujiente con queso y pastor.",
-    image: "",
+    image: "Volcan_pastor.jpg",
   },
   {
     id: 22,
@@ -280,7 +280,7 @@ export const MENU_ITEMS = [
     title: "Pastor",
     price: 70,
     description: "Hamburguesa con carne de pastor.",
-    image: "",
+    image: "Hamburguesa_pastor.jpg",
   },
   {
     id: 31,
@@ -523,7 +523,7 @@ export const MENU_ITEMS = [
     title: "Agua de sabor",
     price: 20,
     description: "Agua fresca de sabores.",
-    image: "",
+    image: "Agua_sabor.jpg",
   },
   {
     id: 57,
