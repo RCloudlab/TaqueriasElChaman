@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
 
 export const PhotoGalery = () => {
   const sliderRef = useRef<Slider | null>(null);
@@ -94,14 +95,20 @@ export const PhotoGalery = () => {
     if (e.key === 'ArrowRight') nextImage();
   };
 
+  const navigate = useNavigate();
+  const goToGalleryPage = () => {
+    navigate("/gallery");
+  }
   return (
     <section className="min-h-[400px] lg:h-96 w-full relative text-white">
       {/* Header Section */}
       <div className="h-2/3 bg-black px-4 sm:px-6 lg:px-10">
         <div className="text-white flex flex-col container mx-auto">
-          <hr className="border-[#3A3940] container mb-8 sm:mb-10 md:mb-14 mx-auto" />
-          
-          <button className="my-2 text-xs sm:text-sm w-28 sm:w-32 md:w-36 text-center bg-red-900 py-2 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400 font-medium">
+          <hr className=" border-[#3A3940] container mb-14 mx-auto" />
+
+          <button 
+          onClick={goToGalleryPage}
+          className="my-2 max-md:text-xs w-28 sm:w-36 text-center bg-red-900 py-1 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400">
             Ver más fotos
           </button>
 
