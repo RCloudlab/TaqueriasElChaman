@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { IMAGES } from "../../constants/images";
 
-function Menu() {
+function MenuSection() {
+  const navigate = useNavigate()
+
+  const handleMenuClick = () => {
+    navigate('/menu')
+  }
   return (
     <section className=" bg-black py-10">
       <div className="max-sm:flex-col max-sm:items-center max-sm:gap-20 container mx-auto flex justify-between bg-black px-11">
@@ -18,6 +24,7 @@ function Menu() {
 
           {/*OPCIÓN BOTON 2 */}
           <button
+            onClick={handleMenuClick}
             className="relative overflow-hidden bg-white text-black py-2 px-8 tracking-wide rounded-lg border
              hover:border-red-900 transition-all duration-500
              max-lg:w-30 group hover:bg-black hover:text-white hover:font-bold hover:scale-110"
@@ -46,4 +53,4 @@ function Menu() {
     </section>
   );
 }
-export default Menu;
+export default MenuSection;

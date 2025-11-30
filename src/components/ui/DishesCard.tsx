@@ -5,19 +5,18 @@ function DishesCard({
   title,
   imageUrl,
   logoUrl,
-  route,
+  linkRoute,
 }: {
   title: string;
   imageUrl: string;
   logoUrl: string;
-  route: string;
+  linkRoute: string;
 }) {
 
   const [isHovered, setIsHovered] = useState(false);
-
   return (
     <Link
-      to={route}
+      to={`/menu/categories/${linkRoute}`}
       className="relative overflow-hidden shadow-xl group "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

@@ -4,26 +4,36 @@ export const menuItems = [
     {
       title: "Groseria",
       imageUrl: IMAGES.groseria,
-      route: "/menu/quesadillas",
+      linkRoute: "quesadillas",
     },
     {
       title: "Tacos",
       imageUrl: IMAGES.tacos,
-      route: "/menu/tacos",
+      linkRoute: "tacos",
     },
     {
       title: "Burritos",
       imageUrl: IMAGES.burrito,
-      route: "/menu/burritos",
+      linkRoute: "especial",
     },
     {
       title: "Totopos",
       imageUrl: IMAGES.totopos,
-      route: "/menu/postres",
+      linkRoute: "totopos",
     },
     {
-      title: "Volcan",
+      title: "Volcanes",
       imageUrl: IMAGES.volcan,
-      route: "/menu/bebidas",
+      linkRoute: "volcanes",
+    },
+    {
+      title: "Alambre",
+      imageUrl: IMAGES.volcan,
+      linkRoute: "alambre",
+    },
+    {
+      title: "Ver Todo",
+      imageUrl: IMAGES.volcan,
+      linkRoute: "all",
     },
   ];

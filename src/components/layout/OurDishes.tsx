@@ -33,7 +33,7 @@ function OurDishes() {
                 className="flex-shrink-0 w-[300px] mx-4"
               >
                 <DishesCard
-                  route="/#"
+                  linkRoute={item.linkRoute}
                   title={item.title}
                   imageUrl={item.imageUrl}
                   logoUrl={IMAGES.deerLogo}
@@ -54,7 +54,7 @@ function OurDishes() {
                 className="w-[300px] md:w-[400px] mx-4 lg:mx-8"
               >
                 <DishesCard
-                  route="/#"
+                  linkRoute={item.linkRoute}
                   title={item.title}
                   imageUrl={item.imageUrl}
                   logoUrl={IMAGES.deerLogo}

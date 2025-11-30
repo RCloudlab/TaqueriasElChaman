@@ -1,12 +1,12 @@
 import { IMAGES } from "../constants/images";
 import OurServices from "../components/ui/OurServices";
-import Menu from "../components/layout/Menu";
 import { OurStory } from "../components/layout/OurStory";
 import Collaborations from "../components/layout/Collaborations"
 import OurDishes from "../components/layout/OurDishes";
 import SocialStats from "../components/layout/SocialStats";
 import { PhotoGalery } from "../components/layout/PhotoGalery";
 import Reviews from "../components/layout/Reviews";
+import MenuSection from "../components/layout/MenuSection";
 
 function Home() {
   return (
@@ -26,7 +26,7 @@ function Home() {
         />
       </picture>
       <OurDishes />
-      <Menu />
+      <MenuSection />
       <OurServices />
       <OurStory />
       <SocialStats />
