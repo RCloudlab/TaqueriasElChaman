@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Props {
   id: string;
   ref: string;
@@ -5,12 +7,19 @@ interface Props {
   styles?: string;
 }
 
-export const ItemsNav = ({ id, ref, text, styles='' }: Props) => {
+export const ItemsNav = ({ id, text, styles='' }: Props) => {
+
+  const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/menu`);
+    };
+
   return (
     <div>
       <a
         id={id}
-        href={ref}
+        onClick={handleClick}
         className={` ${styles} text-xs uppercase border border-transparent border-b-2 hover:border-b-red-900 max-xl:text-xs transition-all duration-300`} 
       >
         {text}
