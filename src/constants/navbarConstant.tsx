@@ -43,11 +43,11 @@ export const optionsNav: OptionsNav[] = [
   //   ref: "/",
   //   text: "Nuestra Historia",
   // },
-  {
-    id: "8",
-    ref: "/ubicacion",
-    text: "Ubicacion",
-  },
+  // {
+  //   id: "8",
+  //   ref: "/ubicacion",
+  //   text: "Ubicacion",
+  // },
   {
     id: "9",
     ref: "/gallery",
