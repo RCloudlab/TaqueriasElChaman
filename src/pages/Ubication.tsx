@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -13,7 +13,7 @@ const TAQUERIA_LNG = -101.19208; // Longitud (Ejemplo)
 const GOOGLE_MAPS_API_KEY = "TU_API_KEY"; // ¡IMPORTANTE! Reemplaza esto
 
 const Ubication = () => {
-  const [mapReady, setMapReady] = useState(false);
+  // const [mapReady, setMapReady] = useState(false);
 
   const initMap = () => {
     if (!window.google || !window.google.maps) return;
@@ -38,7 +38,7 @@ const Ubication = () => {
       title: "Taquería El Chamán",
     });
 
-    setMapReady(true);
+    // setMapReady(true);
   };
 
   useEffect(() => {
