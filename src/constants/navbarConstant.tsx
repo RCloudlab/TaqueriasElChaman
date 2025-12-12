@@ -3,7 +3,6 @@ import type {
   OptionsNav,
 } from "../utils/props";
 
-/**ARREGLO GENERADOR DE LA INFORMACION: Horarios, telefono y dirección */
 export const schedules: ContactInformation[] = [
   {
     id: "1",
@@ -27,9 +26,7 @@ export const contactInformation: ContactInformation[] = [
   },
 ];
 
-{
-  /**ARREGLO GENERADOR OPCIONES NAV */
-}
+
 export const optionsNav: OptionsNav[] = [
   {
     id: "5",
@@ -41,22 +38,20 @@ export const optionsNav: OptionsNav[] = [
     ref: "/menu",
     text: "Menú",
   },
-  {
-    id: "7",
-    ref: "/",
-    text: "Nuestra Historia",
-  },
+  // {
+  //   id: "7",
+  //   ref: "/",
+  //   text: "Nuestra Historia",
+  // },
   {
     id: "8",
-    ref: "/",
+    ref: "/ubicacion",
     text: "Ubicacion",
   },
   {
     id: "9",
-    ref: "/",
-    text: "Contacto",
+    ref: "/gallery",
+    text: "Galeria",
   },
 ];
-{
-  /*********************************************************** */
-}
+
