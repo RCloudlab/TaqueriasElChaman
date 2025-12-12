@@ -7,16 +7,16 @@ interface Props {
   styles?: string;
 }
 
-export const ItemsNav = ({ id, text, styles='' }: Props) => {
+export const ItemsNav = ({ id, ref, text, styles='' }: Props) => {
 
   const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/menu`);
+        navigate(ref);
     };
 
   return (
-    <div>
+    <div className="cursor-pointer">
       <a
         id={id}
         onClick={handleClick}

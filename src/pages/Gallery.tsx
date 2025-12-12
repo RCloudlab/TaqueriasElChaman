@@ -6,12 +6,12 @@ const Gallery = () => {
   return (
     <div className="w-full bg-[#fcfcfc] pb-20">
       <header className="w-full ">
-        <div className="relative w-full  mx-auto h-[500px] rounded-lg overflow-hidden shadow-xl">
+        <div className="relative w-full  mx-auto h-[500px] rounded-lg rounded-t-none overflow-hidden shadow-xl">
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${IMAGES.gallerybg})` }}
 >
-            <div className="absolute inset-0 bg-black/60"></div>
+            <div className="absolute inset-0 bg-black/10"></div>
           </div>
 
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center">

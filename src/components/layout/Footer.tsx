@@ -101,7 +101,7 @@ function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/menu/categories/tacos"
                   className="flex items-center justify-center sm:justify-start space-x-2 hover:text-gray-300"
                 >
                   <HiOutlineArrowRight className="text-red-600" />
