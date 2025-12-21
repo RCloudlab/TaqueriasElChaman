@@ -8,17 +8,32 @@ type ImagenCloudinaryProps = {
   anchoDeseado: number; 
   altText: string;
   className?: string;
+  aspectRatio?: string; // Nueva prop opcional
 };
 
 const ImagenCloudinary = ({ 
   publicId, 
   anchoDeseado, 
   altText, 
-  className 
+  className,
+  aspectRatio // Prop opcional
 }: ImagenCloudinaryProps) => {
     
+  // Crear transformación base
+  const resizeAction = fill().width(anchoDeseado);
+  
+  // Si hay aspect ratio, convertirlo y aplicarlo
+  if (aspectRatio) {
+    if (aspectRatio.includes(':')) {
+      const [ancho, alto] = aspectRatio.split(':').map(Number);
+      resizeAction.aspectRatio(ancho / alto);
+    } else {
+      resizeAction.aspectRatio(parseFloat(aspectRatio));
+    }
+  }
+
   const imagenOptimizada = cld.image(publicId)
-    .resize(fill().width(anchoDeseado))
+    .resize(resizeAction)
     .delivery(format('auto'))
     .delivery(quality('auto'))
     .setVersion('1'); 
@@ -32,7 +47,8 @@ const ImagenCloudinary = ({
       style={{ 
         maxWidth: '100%', 
         height: 'auto', 
-        display: 'block' 
+        display: 'block',
+        width: `${anchoDeseado}px` // Añadido para mejor control
       }} 
     />
   );

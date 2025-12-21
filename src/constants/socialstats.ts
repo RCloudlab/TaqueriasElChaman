@@ -4,21 +4,21 @@ export const statsData = [
   {
     icon: FaFacebook,
     color: "#E02424",
-    target: 82,
+    target: 20,
     label: "SEGUIDORES EN",
-    link: "https://www.facebook.com/profile.php?id=61565664003625"
+    link: "https://www.facebook.com/share/1DvBpkkACk/"
   },
   {
     icon: FaInstagram,
     color: "#E02424",
-    target: 10,
+    target: 15,
     label: "SEGUIDORES EN",
     link: "https://www.instagram.com/taqueriaselchaman/"
   },
   {
     icon: FaTiktok,
     color: "#E02424",
-    target: 130,
+    target: 160,
     label: "SEGUIDORES EN",
     link: "https://www.tiktok.com/@taqueriaselchaman"
   },
