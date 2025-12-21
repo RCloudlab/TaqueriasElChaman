@@ -42,14 +42,6 @@ import gallery5 from "../assets/Images/gallery-5.webp";
 import gallery6 from "../assets/Images/gallery-6.webp";
 import gallerybg from "../assets/Images/gallery-bg.webp";
 import diamod from "../assets/Icons/diamod.svg";
-import menuHomeAlambres from "../assets/Images/menu-home-alambres.webp";
-import menuHomeBebidas from "../assets/Images/menu-home-bebidas.webp";
-import menuHomeBurgers from "../assets/Images/menu-home-burgers.webp";
-import menuHomeGringas from "../assets/Images/menu-home-gringas.webp";
-import menuHomeGroserias from "../assets/Images/menu-home-groserias.webp";
-import menuHomeSpecial from "../assets/Images/menu-home-special.webp";
-import menuHomeTacos from "../assets/Images/menu-home-tacos.webp";
-import menuHomeVolcanes from "../assets/Images/menu-home-volcanes.webp";
 
 export const IMAGES = {
   deerLogo,
@@ -93,14 +85,6 @@ export const IMAGES = {
   gallery5,
   gallery6,
   gallerybg,
-  menuHomeAlambres,
-  menuHomeBebidas,
-  menuHomeBurgers,
-  menuHomeGringas,
-  menuHomeGroserias,
-  menuHomeSpecial,
-  menuHomeTacos,
-  menuHomeVolcanes,
 };
 
 export const ICONS = {

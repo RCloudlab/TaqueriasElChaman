@@ -176,14 +176,14 @@ function Footer() {
               </a>
               <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
-                  src={IMAGES.insta}
+                  src={IMAGES.storyMobile}
                   alt="Instagram 2"
                   className="aspect-square object-cover w-full h-full"
                 />
               </a>
               <a href="https://www.instagram.com/taqueriaselchaman/">
                 <img
-                  src={IMAGES.insta}
+                  src={IMAGES.pgTrompo}
                   alt="Instagram 3"
                   className="aspect-square object-cover w-full h-full"
                 />
