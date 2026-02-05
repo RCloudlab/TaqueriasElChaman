@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ImagenCloudinary from "../../hooks/ImageCloudinary";
 
 function DishesCard({
   title,
@@ -12,34 +13,47 @@ function DishesCard({
   logoUrl: string;
   linkRoute: string;
 }) {
-
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <Link
       to={`/menu/categories/${linkRoute}`}
-      className="relative overflow-hidden shadow-xl group "
+      className="relative block overflow-hidden shadow-xl group rounded-2xl w-full bg-gray-100"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img
-        src={imageUrl}
-        alt={title}
-        className={`
-          w-full h-80 object-cover transition-transform duration-500 ease-in-out rounded-xl
-          ${isHovered ? 'scale-110' : ''}
-        `}
-      />
-      <div className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-transform duration-500 ease-in-out ${isHovered ? 'scale-110' : ''} rounded-xl`}>
-        <h3 className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-4xl font-bold tracking-wide drop-shadow-lg">
-          {title}
-        </h3>
+      <div className="relative aspect-[4/3] w-full overflow-hidden">
+        <ImagenCloudinary
+          publicId={imageUrl}
+          anchoDeseado={800}
+          altText={title + " imagen"}
+          aspectRatio="4:3"
+          className={`
+            w-full h-full object-cover transition-transform duration-700 ease-in-out
+            ${isHovered ? "scale-110" : "scale-100"}
+          `}
+        />
+        
+        <div
+          className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 ${
+            isHovered ? "opacity-100" : "opacity-90"
+          }`}
+        />
+
+        <div className="absolute inset-0 p-6 flex flex-col justify-end items-center">
+          <h3 className="text-white text-3xl font-bold tracking-wide drop-shadow-2xl text-center">
+            {title}
+          </h3>
+        </div>
+
         <img
           src={logoUrl}
           alt="Logo"
-          className="absolute bottom-4 right-4 w-10 h-10 opacity-80"
+          className="absolute top-4 right-4 w-10 h-10 opacity-80 object-contain"
         />
       </div>
     </Link>
   );
 }
+
 export default DishesCard;

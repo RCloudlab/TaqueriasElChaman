@@ -1,39 +1,37 @@
-import { IMAGES } from "./images";
-
 export const menuItems = [
     {
       title: "Groseria",
-      imageUrl: IMAGES.groseria,
+      imageUrl: "groseria-image_w8jg7f",
       linkRoute: "quesadillas",
     },
     {
       title: "Tacos",
-      imageUrl: IMAGES.tacos,
+      imageUrl: "tacos-image_qwtfun",
       linkRoute: "tacos",
     },
     {
       title: "Burritos",
-      imageUrl: IMAGES.burrito,
+      imageUrl: "burrito-image_lemn0c",
       linkRoute: "especial",
     },
     {
       title: "Totopos",
-      imageUrl: IMAGES.totopos,
+      imageUrl: "totopos-image_obwhqh",
       linkRoute: "totopos",
     },
     {
       title: "Volcanes",
-      imageUrl: IMAGES.volcan,
+      imageUrl: "volcan-image_bqdac8",
       linkRoute: "volcanes",
     },
     {
       title: "Alambre",
-      imageUrl: IMAGES.volcan,
+      imageUrl: "Alambre_khbzlt", 
       linkRoute: "alambre",
     },
     {
       title: "Ver Todo",
-      imageUrl: IMAGES.volcan,
+      imageUrl: "Gemini_Generated_Image_n413den413den413_cocqrc",
       linkRoute: "all",
     },
   ];
