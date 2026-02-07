@@ -7,6 +7,8 @@ import SocialStats from "../components/layout/SocialStats";
 import { PhotoGalery } from "../components/layout/PhotoGalery";
 import Reviews from "../components/layout/Reviews";
 import MenuSection from "../components/layout/MenuSection";
+import HistorySection from "../components/layout/NuestraHistoria/HistorySection";
+import { OurHistory } from "../components/layout/OurHistory/OurHistory";
 
 function Home() {
   return (
@@ -28,6 +30,8 @@ function Home() {
       <OurDishes />
       <MenuSection />
       <OurServices />
+      <OurHistory />
+      <HistorySection />
       <OurStory />
       <SocialStats />
       <PhotoGalery />
