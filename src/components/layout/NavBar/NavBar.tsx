@@ -51,6 +51,7 @@ export const NavBar = () => {
     /**FUNCION MENÚ HAMBURGUESA */
   }
   const [isOpen, setIsOpen] = useState(false);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav
@@ -110,6 +111,7 @@ export const NavBar = () => {
       {/**Buttons mobile */}
       <div className={`flex m-auto ${isOpen ? "-mb-[12px]" : "mb-0"}`}>
         <div
+          onClick={closeMenu}
           className={`${
             isOpen ? "block py-4 text-center sm:text-left" : "hidden"
           } block lg:hidden w-[100vw] bg-red-900/10 text-gray-750 rounded-b-md text-md -ml-8`}
