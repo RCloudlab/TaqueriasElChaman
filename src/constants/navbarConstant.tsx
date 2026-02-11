@@ -1,31 +1,4 @@
-import type {
-  ContactInformation,
-  OptionsNav,
-} from "../utils/props";
-
-export const schedules: ContactInformation[] = [
-  {
-    id: "1",
-    info: "6:30pm - 11:30pm",
-  },
-  {
-    id: "2",
-    info: "Lun-Vier: 6:30pm - 11:30pm",
-  },
-];
-
-export const contactInformation: ContactInformation[] = [
-  {
-    id: "3",
-    info: "+52 443 141 3199",
-  },
-
-  {
-    id: "4",
-    info: "Tejedores de Aranza 512, Vasco de Quiroga, Morelia",
-  },
-];
-
+import type { OptionsNav } from "../utils/props";
 
 export const optionsNav: OptionsNav[] = [
   {
@@ -54,4 +27,3 @@ export const optionsNav: OptionsNav[] = [
     text: "Galeria",
   },
 ];
-
