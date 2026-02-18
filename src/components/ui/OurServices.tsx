@@ -3,8 +3,6 @@ import Diamods from "./Diamods";
 import OurServicesCard from "./OurServicesCard";
 import { CARDS_NS } from "../../constants/services";
 
-//Checar los colores, que sean los del figma
-
 function OurServices() {
     return (
         <section className="relative w-full pt-6 pb-14 px-5 text-center bg-[#FAF4EE]">

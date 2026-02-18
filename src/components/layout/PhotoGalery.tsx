@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const PhotoGalery = () => {
   const sliderRef = useRef<Slider | null>(null);
-
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -20,62 +19,45 @@ export const PhotoGalery = () => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 1536, // 2xl
-        settings: { 
-          slidesToShow: 6,
-          slidesToScroll: 2
-        },
+        breakpoint: 1536,
+        settings: { slidesToShow: 6, slidesToScroll: 2 },
       },
       {
-        breakpoint: 1280, // xl
-        settings: { 
-          slidesToShow: 5,
-          slidesToScroll: 2
-        },
+        breakpoint: 1280,
+        settings: { slidesToShow: 5, slidesToScroll: 2 },
       },
       {
-        breakpoint: 1024, // lg
-        settings: { 
-          slidesToShow: 4,
-          slidesToScroll: 2
-        },
+        breakpoint: 1024,
+        settings: { slidesToShow: 4, slidesToScroll: 2 },
       },
       {
-        breakpoint: 768, // md
-        settings: { 
-          slidesToShow: 3,
-          slidesToScroll: 1
-        },
+        breakpoint: 768,
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
       {
-        breakpoint: 640, // sm
-        settings: { 
-          slidesToShow: 2,
-          slidesToScroll: 1
-        },
+        breakpoint: 640,
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
-        breakpoint: 480, // xs
-        settings: { 
+        breakpoint: 480, // xs - Móvil vertical
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: true,
-          centerPadding: '40px'
+          centerPadding: '40px', // Muestra un poco de las fotos laterales (buen UX en móvil)
         },
       },
     ],
   };
 
   const openLightbox = (index: number) => {
-    setCurrentIndex(index - 1); 
+    setCurrentIndex(index - 1);
     setLightboxOpen(true);
-    // Bloquear scroll del body cuando el lightbox está abierto
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    // Restaurar scroll del body
     document.body.style.overflow = 'unset';
   };
 
@@ -87,7 +69,6 @@ export const PhotoGalery = () => {
     setCurrentIndex((prev) => (prev - 1 + galery.length) % galery.length);
   };
 
-  // Manejar navegación con teclado en el lightbox
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') prevImage();
@@ -95,114 +76,121 @@ export const PhotoGalery = () => {
   };
 
   return (
-    <section className="min-h-[400px] lg:h-96 w-full relative text-white">
-      {/* Header Section */}
-      <div className="h-2/3 bg-black px-4 sm:px-6 lg:px-10">
-        <div className="text-white flex flex-col container mx-auto">
-          <hr className="border-[#3A3940] container mb-8 sm:mb-10 md:mb-14 mx-auto" />
+    // Aumenté el min-height en móvil para que quepa todo sin apretarse
+    <section className="min-h-[500px] lg:h-[500px] w-full relative text-white bg-white">
+      
+      {/* --- Header Section (Negro) --- */}
+      {/* Ocupa el 60% de la altura para dar buen fondo al slider */}
+      <div className="h-[65%] sm:h-2/3 bg-black px-4 sm:px-6 lg:px-10 pb-10">
+        <div className="text-white flex flex-col container mx-auto h-full">
           
-          <button className="my-2 text-xs sm:text-sm w-28 sm:w-32 md:w-36 text-center bg-red-900 py-2 px-4 rounded-lg hover:bg-red-900/80 transition-all duration-400 font-medium">
-            Ver más fotos
-          </button>
+          <hr className="border-[#3A3940] w-full mb-6 sm:mb-8 md:mb-12 opacity-50" />
 
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
-            <h3 className="tracking-widest font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">
-              GALERIA DE FOTOS
-            </h3>
+          {/* Contenedor Flex reorganizado para móvil */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0 mt-2">
             
-            <div className="flex space-x-2 self-end sm:self-auto">
+            {/* TÍTULO Y BOTÓN AGRUPADOS */}
+            {/* En móvil: Centrados y Título primero. En Desktop: Alineados izquierda */}
+            <div className="flex flex-col items-center sm:items-start space-y-4 sm:space-y-2 w-full sm:w-auto">
+              <h3 className="text-2xl sm:text-xl md:text-3xl lg:text-3xl font-bold tracking-widest text-center sm:text-left">
+                GALERIA DE FOTOS
+              </h3>
+              
+              <button className="text-xs sm:text-sm bg-red-900 py-2 px-6 rounded-lg hover:bg-red-900/80 transition-all duration-300 font-medium uppercase tracking-wide">
+                Ver más fotos
+              </button>
+            </div>
+
+            {/* BOTONES DE NAVEGACIÓN */}
+            {/* Ocultos en móvil (hidden), visibles en sm (flex) */}
+            <div className="hidden sm:flex space-x-2">
               <button
                 onClick={() => sliderRef.current?.slickPrev()}
-                className="border p-2 rounded-full hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-white/50"
-                aria-label="Imagen anterior"
+                className="border border-white/30 p-2 rounded-full hover:bg-white/10 transition focus:outline-none"
+                aria-label="Anterior"
               >
-                <ArrowLeft className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                <ArrowLeft className="text-white w-5 h-5" />
               </button>
               <button
                 onClick={() => sliderRef.current?.slickNext()}
-                className="border p-2 rounded-full hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-white/50"
-                aria-label="Siguiente imagen"
+                className="border border-white/30 p-2 rounded-full hover:bg-white/10 transition focus:outline-none"
+                aria-label="Siguiente"
               >
-                <ArrowRight className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                <ArrowRight className="text-white w-5 h-5" />
               </button>
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* Background White Space */}
-      <div className="bg-white w-full h-1/3 lg:h-2/4"></div>
-
-      {/* Slider Section */}
-      <div className="absolute top-32 sm:top-36 md:top-40 lg:top-36 w-full px-2 sm:px-4">
+      {/* --- Slider Section (Posicionamiento Absoluto) --- */}
+      {/* Ajustado el 'top' para móvil y desktop para que quede centrado entre lo negro y blanco */}
+      <div className="absolute top-[45%] sm:top-40 md:top-48 lg:top-40 w-full px-0 sm:px-4">
         <Slider ref={sliderRef} {...settings}>
           {galery.map((g) => (
-            <div key={g.id} className="px-1 sm:px-2 cursor-pointer">
-              <div className="h-48 sm:h-52 md:h-56 lg:h-60 xl:h-64 rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
+            <div key={g.id} className="px-2 cursor-pointer outline-none">
+              <div className="group relative rounded-xl overflow-hidden shadow-2xl">
+                {/* Altura ajustada: h-64 en móvil (más alto para ver mejor la comida) */}
                 <img
                   onClick={() => openLightbox(g.id)}
                   src={g.url}
                   alt={g.alt}
-                  className="w-full h-full object-cover transform duration-500 hover:scale-110 transition-transform cursor-pointer"
+                  className="w-full h-64 sm:h-52 md:h-56 lg:h-64 object-cover transform duration-500 hover:scale-110 transition-transform"
                   loading="lazy"
                 />
+                {/* Overlay sutil al hacer hover (opcional, da toque premium) */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none" />
               </div>
             </div>
           ))}
         </Slider>
       </div>
 
-      {/* Lightbox */}
+      {/* --- Lightbox (Sin cambios funcionales, solo estilo) --- */}
       {lightboxOpen && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+        <div
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={closeLightbox}
           onKeyDown={handleKeyDown}
           tabIndex={0}
         >
-          <div 
-            className="relative max-w-4xl w-full max-h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
+          <div className="relative w-full max-w-6xl flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            
             <button
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white bg-gray-900/80 hover:bg-gray-800 p-2 rounded-full z-10 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+              className="absolute -top-12 right-0 text-white/70 hover:text-white transition-colors"
               onClick={closeLightbox}
-              aria-label="Cerrar lightbox"
             >
-              <X size={20} className="sm:w-6 sm:h-6" />
+              <X size={32} />
             </button>
 
-            {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 text-white p-2 sm:p-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
-              aria-label="Imagen anterior"
+              className="absolute left-0 sm:-left-12 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors hidden sm:block"
             >
-              <ChevronLeft size={24} className="sm:w-7 sm:h-7" />
+              <ChevronLeft size={48} />
             </button>
 
-            {/* Image Container */}
-            <div className="flex items-center justify-center w-full h-full p-2 sm:p-4">
-              <img
-                src={galery[currentIndex].url}
-                alt={galery[currentIndex].alt}
-                className="max-h-[70vh] sm:max-h-[80vh] max-w-full w-auto object-contain rounded-md shadow-lg"
-              />
-            </div>
+            <img
+              src={galery[currentIndex].url}
+              alt={galery[currentIndex].alt}
+              className="max-h-[80vh] w-auto max-w-full rounded-md shadow-2xl object-contain"
+            />
 
             <button
               onClick={nextImage}
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 text-white p-2 sm:p-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
-              aria-label="Siguiente imagen"
+              className="absolute right-0 sm:-right-12 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors hidden sm:block"
             >
-              <ChevronRight size={24} className="sm:w-7 sm:h-7" />
+              <ChevronRight size={48} />
             </button>
+            
+            {/* Navegación móvil para lightbox (zonas táctiles invisibles o flechas pequeñas) */}
+             <div className="absolute bottom-[-3rem] flex space-x-8 sm:hidden text-white">
+                <ChevronLeft size={32} onClick={prevImage} />
+                <span className="self-center text-sm">{currentIndex + 1} / {galery.length}</span>
+                <ChevronRight size={32} onClick={nextImage} />
+             </div>
 
-            {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-              {currentIndex + 1} / {galery.length}
-            </div>
           </div>
         </div>
       )}
