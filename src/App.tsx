@@ -7,7 +7,6 @@ import Footer from "./components/layout/Footer";
 import { NavBar } from "./components/layout/NavBar/NavBar";
 import MenuAll from "./components/layout/MenuAll";
 import ScrollToTop from "./hooks/ScrollTop";
-import Ubication from "./pages/Ubication";
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
         <Route path="/menu/categories" element={<MenuAll />} />
         <Route path="/menu/categories/:categoryId" element={<MenuAll />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/ubicacion" element={<Ubication />} />
       </Routes>
       <Footer />
     </BrowserRouter>

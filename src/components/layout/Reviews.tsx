@@ -1,51 +1,16 @@
-import { useState, useEffect } from "react";
-import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaMapMarkedAlt, FaClock, FaDirections } from "react-icons/fa";
 import { GiGarlic, GiTacos } from "react-icons/gi"; 
 import { PiPaperPlaneTiltFill } from "react-icons/pi";
 import { useInView } from "react-intersection-observer";
-import type { TReview } from "../../utils/Reviews";
-import ReviewCard from "../ui/ReviewCard";
 import Diamods from "../ui/Diamods";
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState<TReview[]>([]);
-  const [loading, setLoading] = useState(true);
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const mapsLink = "https://www.google.com/maps/place/Tacos+El+Chaman/data=!4m2!3m1!1s0x0:0x3fad54bab9095e7e?sa=X&ved=1t:2428&ictx=111";
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const dummyData: TReview[] = [
-          {
-            id: 1,
-            text: "Muy ricos los tacos la verdad, fuimos con mi familia y estuvieron 10 de 10 la atención excelente",
-            author: "Huber Gutierrez",
-            source: "Google Maps",
-            avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWUHG-KPl1z1JzCp0dp6mubVLM9Sqo7r079oEsTpV75ErScmj_I=w90-h90-p-rp-mo-br100",
-          },
-          {
-            id: 2,
-            text: "Excelente pastor, el mejor pastor de morelia, además muy accesibles, la atencion de primera calidad como ninguna otra, gracias al Chamán",
-            author: "Ricardo Vega",
-            source: "Google Maps",
-            avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWrgqj_hBey3Jn39vxu_7ptwA7cQlEq2BclCmZ2D-o0izz3wnO5eQ=w90-h90-p-rp-mo-ba2-br100",
-          },
-        ];
-        setReviews(dummyData);
-        setLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchReviews();
-  }, []);
+  const mapsLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.2376246795!2d-101.1735221!3d19.702504899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0f00158c7e89%3A0x3fad54bab9095e7e!2sTacos%20El%20Chaman!5e0!3m2!1ses-419!2smx!4v1770762941154!5m2!1ses-419!2smx";
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
@@ -72,37 +37,65 @@ const Reviews = () => {
           </div>
           <div className="w-px h-10 bg-red-600 mx-auto mt-2 mb-1 md:mb-3"></div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight font-serif">
-            Nuestras Reseñas
+            Nuestra Ubicación
           </h2>
-          <p className="text-gray-500 text-lg mb-8">
-            Descubre por qué nuestros clientes siempre regresan por más tacos.
+          <p className="text-gray-500 text-lg">
+            Visítanos y disfruta de nuestros deliciosos tacos. Aquí te dejamos los horarios y cómo llegar.
           </p>
-          <a
-            href={mapsLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-red-900/90 hover:bg-red-900 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
-          >
-            <FaMapMarkedAlt />
-            Déjanos tu opinión en Maps
-          </a>
         </div>
-        <div
+
+        <div 
           ref={ref}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 transition-all duration-1000 ease-out ${
+          className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-1000 ease-out ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          {loading
-            ? [1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="h-64 bg-gray-100 rounded-2xl animate-pulse"
-                ></div>
-              ))
-            : reviews.map((review) => (
-                <ReviewCard key={review.id} review={review} />
-              ))}
+          <div className="lg:col-span-2 h-[450px] border border-gray-200 shadow-lg bg-gray-50">
+            <iframe
+              src={mapsLink}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div className="flex flex-col gap-6">            
+            <div className="bg-white p-8 border border-gray-200 border-t-4 border-t-red-600 shadow-lg flex-1 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold mb-5 flex items-center gap-3 text-black">
+                <FaClock className="text-red-600" /> Horarios
+              </h3>
+              <ul className="space-y-3 text-black font-medium">
+                <li className="flex justify-between border-b border-gray-100 pb-2">
+                  <span className="text-black font-bold">Lun - Sáb:</span> <span>18:30 - 23:30</span>
+                </li>
+                <li className="flex justify-between text-red-600 font-bold pt-1">
+                  <span>Domingo:</span> <span>12:00 - 23:30</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white p-8 border border-gray-200 border-t-4 border-t-black shadow-lg flex-1 flex flex-col justify-center">
+              <h3 className="text-xl font-bold mb-4 uppercase tracking-widest text-black flex items-center gap-2">
+                <FaDirections className="text-red-600" /> Visítanos
+              </h3>
+              <p className="text-gray-600 mb-6 font-medium leading-relaxed">
+                Av. Principal #123, Col. Centro, Ciudad de México.
+              </p>
+              
+              <div className="flex flex-col gap-3">
+                <a 
+                  href={mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-red-600 text-white font-bold py-3 px-4 border-2 border-red-600 hover:bg-white hover:text-red-600 transition-colors"
+                >
+                  <FaMapMarkedAlt /> ¿Cómo llegar?
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
