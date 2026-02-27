@@ -18,7 +18,6 @@ const Reviews = () => {
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      {/* Decorative background icons */}
       <div className="absolute top-0 -left-10 md:left-10 text-gray-100 pointer-events-none z-0 transform -rotate-12">
         <GiGarlic className="text-[150px] md:text-[200px] opacity-60" />
       </div>
@@ -36,7 +35,6 @@ const Reviews = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-1 mb-4">
             <Diamods numberOfDiamonds={4} />
@@ -51,14 +49,12 @@ const Reviews = () => {
           </p>
         </div>
 
-        {/* Main grid */}
         <div
           ref={ref}
           className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-1000 ease-out ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          {/* ── Interactive map card ── */}
           <div className="lg:col-span-2 flex flex-col border border-gray-200 shadow-lg overflow-hidden">
             {/* Map header bar */}
             <div className="flex items-center justify-between bg-gray-900 px-5 py-3 shrink-0">
@@ -96,11 +92,9 @@ const Reviews = () => {
               />
             </div>
 
-            {/* Red accent strip at bottom */}
             <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-400 to-red-600 shrink-0" />
           </div>
 
-          {/* ── Info cards ── */}
           <div className="flex flex-col gap-6">
             {/* Hours card */}
             <div className="bg-white p-8 border border-gray-200 border-t-4 border-t-red-600 shadow-lg flex-1 flex flex-col justify-center">
@@ -125,7 +119,7 @@ const Reviews = () => {
                 <FaDirections className="text-red-600" /> Visítanos
               </h3>
               <p className="text-gray-600 mb-6 font-medium leading-relaxed">
-                Av. Principal #123, Col. Centro, Morelia, Michoacán.
+                ATejedores de Aranza 512, Vasco de Quiroga, 58230 Morelia, Mich.
               </p>
 
               <div className="flex flex-col gap-3">
