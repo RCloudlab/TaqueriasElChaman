@@ -11,6 +11,7 @@ import { OurHistorys } from "../components/layout/OurHistorys";
 function Home() {
   return (
     <div className=" flex-1 w-full mx-auto">
+      <div className="absolute top-0 left-0 w-full h-screen bg-black/50 z-10" />
       <picture>
         <source
           media="(max-width: 768px)"
