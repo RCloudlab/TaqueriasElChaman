@@ -1,6 +1,6 @@
 import { galery } from "../../constants/galery";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef} from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "slick-carousel/slick/slick.css";
@@ -10,29 +10,6 @@ export const PhotoGalery = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1,
-      },
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const settings = {
     infinite: true,
@@ -101,10 +78,7 @@ export const PhotoGalery = () => {
 
   return (
     // Aumenté el min-height en móvil para que quepa todo sin apretarse
-    <section
-      ref={sectionRef}
-      className="min-h-[500px] lg:h-[500px] w-full relative text-white bg-white "
-    >
+    <section className="min-h-[500px] lg:h-[500px] w-full relative text-white bg-white ">
       {/* --- Header Section (Negro) --- */}
       {/* Ocupa el 60% de la altura para dar buen fondo al slider */}
       <div className="h-[65%] sm:h-2/3 bg-black px-4 sm:px-6 lg:px-10 pb-10">
